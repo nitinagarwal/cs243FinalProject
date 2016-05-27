@@ -1,0 +1,40 @@
+==8214== NVPROF is profiling process 8214, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==8214== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==8214== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,KB,GB/s,,,,
+516.580094,136.225000,,,,,,,,,,334.093750,2.338900,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+516.721855,17.153000,168,1,1,256,1,1,9,0,0,,,"GeForce GT 630 (0)","1","7","euclid(latLong*, float*, int, float, float) [103]"
+516.760352,72.512000,,,,,,,,,,167.046875,2.196992,"GeForce GT 630 (0)","1","7","[CUDA memcpy DtoH]"
+==8232== NVPROF is profiling process 8232, command: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==8232== Profiling application: ./nn filelist_4 -r 5 -lat 30 -lng 90
+==8232== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+61.930212,114.369000,1,114.369000,114.369000,114.369000,"[CUDA memcpy HtoD]"
+28.798856,53.184000,1,53.184000,53.184000,53.184000,"[CUDA memcpy DtoH]"
+9.270931,17.121000,1,17.121000,17.121000,17.121000,"euclid(latLong*, float*, int, float, float)"
+
+==8232== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GT 630 (0)",5,36.000000,35.000000,37.000000
+"Fan (%)","GeForce GT 630 (0)",3,35.000000,35.000000,35.000000
+
+==8232== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+98.958753,209.162820,3,69.720940,5.366000,209.065160,"cudaThreadSynchronize"
+0.313804,0.663267,2,0.331633,321.137000,0.342130,"cudaMemcpy"
+0.194508,0.411119,83,4.953000e-03,0.213000,0.170900,"cuDeviceGetAttribute"
+0.158552,0.335122,1,0.335122,335.122000,0.335122,"cudaGetDeviceProperties"
+0.142893,0.302024,2,0.151012,148.397000,0.153627,"cudaMalloc"
+0.105630,0.223264,2,0.111632,94.482000,0.128782,"cudaFree"
+0.046901,0.099131,1,0.099131,99.131000,0.099131,"cuDeviceTotalMem"
+0.028107,0.059408,1,0.059408,59.408000,0.059408,"cudaMemGetInfo"
+0.027242,0.057579,1,0.057579,57.579000,0.057579,"cuDeviceGetName"
+0.016940,0.035805,1,0.035805,35.805000,0.035805,"cudaLaunch"
+0.002069,4.373000e-03,1,4.373000e-03,4.373000,4.373000e-03,"cuDeviceGetPCIBusId"
+0.001701,3.596000e-03,5,7.190000e-04,0.375000,1.693000e-03,"cudaSetupArgument"
+0.001187,2.509000e-03,1,2.509000e-03,2.509000,2.509000e-03,"cudaConfigureCall"
+0.000894,1.890000e-03,2,9.450000e-04,0.449000,1.441000e-03,"cuDeviceGetCount"
+0.000818,1.730000e-03,2,8.650000e-04,0.259000,1.471000e-03,"cuDeviceGet"
