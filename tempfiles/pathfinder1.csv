@@ -1,0 +1,47 @@
+==22735== NVPROF is profiling process 22735, command: ./pathfinder 100 100 20
+==22735== Profiling application: ./pathfinder 100 100 20
+==22735== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,KB,KB,GB/s,,,,
+172.051375,0.832000,,,,,,,,,,0.390625,0.447751,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+172.154606,4.960000,,,,,,,,,,38.671875,7.435559,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+172.208334,12.448000,1,1,1,256,1,1,17,2.048000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [105]"
+172.222221,11.648000,1,1,1,256,1,1,17,2.048000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [115]"
+172.235277,11.584000,1,1,1,256,1,1,17,2.048000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [125]"
+172.248269,11.520000,1,1,1,256,1,1,17,2.048000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [135]"
+172.261229,11.168000,1,1,1,256,1,1,17,2.048000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [145]"
+172.283213,1.504000,,,,,,,,,,0.390625,0.247692,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+==22973== NVPROF is profiling process 22973, command: ./pathfinder 100 100 20
+==22973== Profiling application: ./pathfinder 100 100 20
+==22973== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+89.641072,63.136000,5,12.627000,11.168000,17.216000,"dynproc_kernel(int, int*, int*, int*, int, int, int, int)"
+8.223535,5.792000,2,2.896000,0.832000,4.960000,"[CUDA memcpy HtoD]"
+2.135393,1.504000,1,1.504000,1.504000,1.504000,"[CUDA memcpy DtoH]"
+
+==22973== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GTX 650 (0)",1,36.000000,36.000000,36.000000
+"Fan (%)","GeForce GTX 650 (0)",1,21.000000,21.000000,21.000000
+
+==22973== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+98.133911,40.271104,3,13.423701,6.106000,40.141391,"cudaMalloc"
+0.820423,0.336676,83,4.056000e-03,0.091000,0.151780,"cuDeviceGetAttribute"
+0.347417,0.142569,3,0.047523,14.839000,0.069173,"cudaFree"
+0.211098,0.086628,1,0.086628,86.628000,0.086628,"cuDeviceTotalMem"
+0.194437,0.079791,3,0.026597,15.065000,0.049544,"cudaMemcpy"
+0.140157,0.057516,5,0.011503,3.741000,0.030462,"cudaLaunch"
+0.111497,0.045755,1,0.045755,45.755000,0.045755,"cuDeviceGetName"
+0.018864,7.741000e-03,40,1.930000e-04,0.118000,2.230000e-03,"cudaSetupArgument"
+0.006930,2.844000e-03,1,2.844000e-03,2.844000,2.844000e-03,"cuDeviceGetPCIBusId"
+0.005149,2.113000e-03,5,4.220000e-04,0.134000,1.316000e-03,"cudaConfigureCall"
+0.004691,1.925000e-03,1,1.925000e-03,1.925000,1.925000e-03,"cudaGetDeviceCount"
+0.003965,1.627000e-03,2,8.130000e-04,0.235000,1.392000e-03,"cuDeviceGetCount"
+0.001462,6.000000e-04,2,3.000000e-04,0.105000,4.950000e-04,"cuDeviceGet"
+
+
+
+nvprof --csv --system-profiling on ./pathfinder 100 100 20 2 

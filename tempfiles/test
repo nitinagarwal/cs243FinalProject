@@ -1,0 +1,9 @@
+Mentioned in this file are the commands which need to be run on each machine to generate the output files
+
+nvprof --csv --system-profiling on ./run 2>>filename.csv
+
+nvprof --csv --print-gpu-trace ./run 2>>test.csv
+
+
+
+
