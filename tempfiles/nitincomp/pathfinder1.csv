@@ -44,4 +44,4 @@ ms,us,,,,,,,,B,KB,KB,GB/s,,,,
 
 
 
-nvprof --csv --system-profiling on ./pathfinder 100 100 20 2 
+nvprof --csv --system-profiling on ./pathfinder 100000 1000 20 
