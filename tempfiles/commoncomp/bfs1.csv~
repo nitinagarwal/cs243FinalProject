@@ -1,0 +1,65 @@
+======== Warning: No CUDA application was profiled, exiting
+==7841== NVPROF is profiling process 7841, command: ./bfs ../../data/bfs/graph1MW_6.txt
+==7841== Profiling application: ./bfs ../../data/bfs/graph1MW_6.txt
+==7841== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,us,us,ms,
+51.690406,13.477388,18,748.743000,1.887000,8.615148,"[CUDA memcpy HtoD]"
+38.773193,10.109446,12,842.453000,94.002000,4.848761,"Kernel(Node*, int*, bool*, bool*, bool*, int*, int)"
+5.051001,1.316962,12,109.746000,100.592000,0.122825,"Kernel2(bool*, bool*, bool*, bool*, int)"
+4.485399,1.169491,13,89.960000,1.568000,1.149523,"[CUDA memcpy DtoH]"
+
+==7841== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",4,885.500000,101.000000,1147.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",4,1154.250000,135.000000,1494.000000
+"Temperature (C)","Quadro 6000 (0)",8,70.375000,69.000000,72.000000
+"Fan (%)","Quadro 6000 (0)",4,30.000000,30.000000,30.000000
+
+==7841== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+78.933316,111.175450,7,15.882207,265.956000,109.383044,"cudaMalloc"
+19.655502,27.684246,31,0.893040,9.079000,8.767037,"cudaMemcpy"
+0.554875,0.781526,83,9.415000e-03,0.628000,0.321758,"cuDeviceGetAttribute"
+0.454660,0.640376,6,0.106729,84.369000,0.188362,"cudaFree"
+0.189124,0.266376,24,0.011099,8.940000,0.033035,"cudaLaunch"
+0.077303,0.108879,144,7.560000e-04,0.628000,8.032000e-03,"cudaSetupArgument"
+0.063471,0.089397,1,0.089397,89.397000,0.089397,"cuDeviceTotalMem"
+0.050776,0.071517,1,0.071517,71.517000,0.071517,"cuDeviceGetName"
+0.015421,0.021720,24,9.050000e-04,0.768000,2.235000e-03,"cudaConfigureCall"
+0.002380,3.352000e-03,1,3.352000e-03,3.352000,3.352000e-03,"cuDeviceGetPCIBusId"
+0.001686,2.374000e-03,2,1.187000e-03,0.977000,1.397000e-03,"cuDeviceGetCount"
+0.001487,2.095000e-03,2,1.047000e-03,0.698000,1.397000e-03,"cuDeviceGet"
+==7852== NVPROF is profiling process 7852, command: ./bfs ../../data/bfs/graph1MW_6.txt
+==7852== Profiling application: ./bfs ../../data/bfs/graph1MW_6.txt
+==7852== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,us,us,ms,
+53.239727,14.353521,18,797.417000,1.888000,9.246807,"[CUDA memcpy HtoD]"
+37.559188,10.126021,12,843.835000,94.229000,4.861035,"Kernel(Node*, int*, bool*, bool*, bool*, int*, int)"
+4.882469,1.316322,12,109.693000,100.499000,0.122610,"Kernel2(bool*, bool*, bool*, bool*, int)"
+4.318615,1.164306,13,89.562000,1.568000,1.144275,"[CUDA memcpy DtoH]"
+
+==7852== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",4,1116.750000,1026.000000,1147.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",4,1494.000000,1494.000000,1494.000000
+"Temperature (C)","Quadro 6000 (0)",8,74.250000,74.000000,75.000000
+"Fan (%)","Quadro 6000 (0)",4,30.000000,30.000000,30.000000
+
+==7852== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+75.571211,94.701078,7,13.528725,280.133000,91.747212,"cudaMalloc"
+22.897021,28.693103,31,0.925583,9.429000,9.428573,"cudaMemcpy"
+0.531585,0.666149,83,8.025000e-03,0.628000,0.280831,"cuDeviceGetAttribute"
+0.494576,0.619771,6,0.103295,83.809000,0.189409,"cudaFree"
+0.263005,0.329581,24,0.013732,9.288000,0.037016,"cudaLaunch"
+0.096136,0.120471,144,8.360000e-04,0.628000,9.009000e-03,"cudaSetupArgument"
+0.063592,0.079689,1,0.079689,79.689000,0.079689,"cuDeviceGetName"
+0.056235,0.070470,1,0.070470,70.470000,0.070470,"cuDeviceTotalMem"
+0.019619,0.024585,24,1.024000e-03,0.768000,2.444000e-03,"cudaConfigureCall"
+0.003065,3.841000e-03,1,3.841000e-03,3.841000,3.841000e-03,"cuDeviceGetPCIBusId"
+0.002175,2.725000e-03,2,1.362000e-03,1.048000,1.677000e-03,"cuDeviceGetCount"
+0.001783,2.234000e-03,2,1.117000e-03,0.768000,1.466000e-03,"cuDeviceGet"
