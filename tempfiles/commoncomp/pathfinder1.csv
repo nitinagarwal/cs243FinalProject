@@ -1,0 +1,91 @@
+==5993== NVPROF is profiling process 5993, command: ./pathfinder 100000 1000 20
+==5993== Profiling application: ./pathfinder 100000 1000 20
+==5993== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+s,ms,,,,,,,,B,KB,MB,GB/s,,,,
+485.551710,0.074429,,,,,,,,,,0.381470,5.005160,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+485.552809,150.323259,,,,,,,,,,381.088257,2.475708,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+485.703134,0.202674,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [105]"
+485.703338,0.201960,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [115]"
+485.703541,0.200884,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [125]"
+485.703744,0.201735,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [135]"
+485.703947,0.201319,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [145]"
+485.704149,0.201721,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [155]"
+485.704352,0.202317,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [165]"
+485.704556,0.201935,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [175]"
+485.704759,0.199643,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [185]"
+485.704961,0.202099,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [195]"
+485.705164,0.201204,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [205]"
+485.705367,0.201005,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [215]"
+485.705569,0.200257,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [225]"
+485.705771,0.202490,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [235]"
+485.705974,0.201599,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [245]"
+485.706177,0.201540,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [255]"
+485.706380,0.200677,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [265]"
+485.706582,0.201624,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [275]"
+485.706785,0.200628,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [285]"
+485.706987,0.201580,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [295]"
+485.707190,0.200798,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [305]"
+485.707393,0.200593,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [315]"
+485.707595,0.201081,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [325]"
+485.707797,0.201467,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [335]"
+485.708000,0.201452,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [345]"
+485.708203,0.200060,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [355]"
+485.708404,0.201216,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [365]"
+485.708607,0.201118,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [375]"
+485.708809,0.202076,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [385]"
+485.709013,0.201796,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [395]"
+485.709216,0.201953,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [405]"
+485.709419,0.201738,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [415]"
+485.709622,0.201324,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [425]"
+485.709825,0.202585,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [435]"
+485.710029,0.201858,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [445]"
+485.710232,0.202598,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [455]"
+485.710436,0.201898,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [465]"
+485.710640,0.201381,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [475]"
+485.710842,0.202225,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [485]"
+485.711046,0.201794,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [495]"
+485.711249,0.201172,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [505]"
+485.711452,0.201743,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [515]"
+485.711655,0.200828,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [525]"
+485.711857,0.200961,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [535]"
+485.712059,0.202104,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [545]"
+485.712263,0.201748,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [555]"
+485.712466,0.201385,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [565]"
+485.712669,0.201019,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [575]"
+485.712871,0.201546,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [585]"
+485.713074,0.188342,463,1,1,256,1,1,15,2.048000e+03,0.000000,,,"Quadro 6000 (0)","1","7","dynproc_kernel(int, int*, int*, int*, int, int, int, int) [595]"
+485.713266,0.068861,,,,,,,,,,0.381470,5.409870,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+==6018== NVPROF is profiling process 6018, command: ./pathfinder 100000 1000 20
+==6018== Profiling application: ./pathfinder 100000 1000 20
+==6018== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+93.583229,147.817308,2,73.908654,74.429000,147.742879,"[CUDA memcpy HtoD]"
+6.372993,10.066319,50,0.201326,189.041000,0.203833,"dynproc_kernel(int, int*, int*, int*, int, int, int, int)"
+0.043778,0.069149,1,0.069149,69.149000,0.069149,"[CUDA memcpy DtoH]"
+
+==6018== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",4892,555.317048,101.000000,1147.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",4892,1479.554374,135.000000,1494.000000
+"Temperature (C)","Quadro 6000 (0)",9784,82.785057,66.000000,86.000000
+"Fan (%)","Quadro 6000 (0)",4892,35.032502,30.000000,39.000000
+
+==6018== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+61.604226,157.673263,3,52.557754,169.924000,147.975591,"cudaMemcpy"
+37.562223,96.138831,3,32.046277,9.638000,95.573606,"cudaMalloc"
+0.285783,0.731450,83,8.812000e-03,0.628000,0.317289,"cuDeviceGetAttribute"
+0.201544,0.515844,50,0.010316,9.079000,0.050565,"cudaLaunch"
+0.158049,0.404520,3,0.134840,13.409000,0.287467,"cudaFree"
+0.109067,0.279153,400,6.970000e-04,0.628000,8.520000e-03,"cudaSetupArgument"
+0.030180,0.077245,1,0.077245,77.245000,0.077245,"cuDeviceTotalMem"
+0.028297,0.072426,1,0.072426,72.426000,0.072426,"cuDeviceGetName"
+0.016536,0.042323,50,8.460000e-04,0.698000,4.679000e-03,"cudaConfigureCall"
+0.001446,3.701000e-03,1,3.701000e-03,3.701000,3.701000e-03,"cuDeviceGetPCIBusId"
+0.001010,2.585000e-03,2,1.292000e-03,1.048000,1.537000e-03,"cuDeviceGet"
+0.000982,2.514000e-03,2,1.257000e-03,0.908000,1.606000e-03,"cuDeviceGetCount"
+0.000655,1.676000e-03,1,1.676000e-03,1.676000,1.676000e-03,"cudaGetDeviceCount"
+==6018== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.
