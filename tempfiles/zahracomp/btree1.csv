@@ -1,0 +1,58 @@
+==10216== NVPROF is profiling process 10216, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==10216== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==10216== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+79.942181,32.360252,15,2.157350,6.304000e-03,14.544323,"[CUDA memcpy HtoD]"
+10.005311,4.050107,1,4.050107,4.050107,4.050107,"findRangeK"
+9.964520,4.033595,1,4.033595,4.033595,4.033595,"findK"
+0.087988,0.035617,3,0.011872,0.010048,0.015521,"[CUDA memcpy DtoH]"
+
+==10216== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GT 630 (0)",50,36.840000,36.000000,38.000000
+"Fan (%)","GeForce GT 630 (0)",25,35.000000,35.000000,35.000000
+
+==10216== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+84.089181,201.951845,4,50.487961,7.411000,193.861958,"cudaThreadSynchronize"
+14.773988,35.481784,18,1.971210,36.139000,15.339589,"cudaMemcpy"
+0.454760,1.092170,15,0.072811,9.756000,0.202954,"cudaMalloc"
+0.386143,0.927377,15,0.061825,10.264000,0.225787,"cudaFree"
+0.149670,0.359453,83,4.330000e-03,0.214000,0.154671,"cuDeviceGetAttribute"
+0.054991,0.132069,2,0.066034,63.008000,0.069061,"cudaLaunch"
+0.039203,0.094151,1,0.094151,94.151000,0.094151,"cuDeviceTotalMem"
+0.026840,0.064461,1,0.064461,64.461000,0.064461,"cuDeviceGetName"
+0.010221,0.024546,35,7.010000e-04,0.364000,3.276000e-03,"cudaGetLastError"
+0.005968,0.014334,19,7.540000e-04,0.343000,5.757000e-03,"cudaSetupArgument"
+0.004169,0.010012,1,0.010012,10.012000,0.010012,"cudaSetDevice"
+0.001684,4.045000e-03,1,4.045000e-03,4.045000,4.045000e-03,"cuDeviceGetPCIBusId"
+0.001544,3.709000e-03,2,1.854000e-03,1.396000,2.313000e-03,"cudaConfigureCall"
+0.001073,2.577000e-03,2,1.288000e-03,0.812000,1.765000e-03,"cuDeviceGetCount"
+0.000564,1.354000e-03,2,6.770000e-04,0.298000,1.056000e-03,"cuDeviceGet"
+==10243== NVPROF is profiling process 10243, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==10243== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==10243== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+s,ms,,,,,,,,B,B,MB,GB/s,,,,
+2.534602,14.542531,,,,,,,,,,15.529091,1.042812,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549239,0.013696,,,,,,,,,,0.045776,3.263981,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549300,0.013696,,,,,,,,,,0.045776,3.263981,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549359,0.013696,,,,,,,,,,0.045776,3.263981,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549418,0.013664,,,,,,,,,,0.045776,3.271625,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549462,6.688000e-03,,,,,,,,,,0.022888,3.342067,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549751,6.368000e-03,,,,,,,,,,0.022888,3.510010,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549785,6.336000e-03,,,,,,,,,,0.022888,3.527737,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549821,6.945000e-03,,,,,,,,,,0.022888,3.218393,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.549908,3.804346,6000,1,1,256,1,1,25,0,0,,,"GeForce GT 630 (0)","1","7","findRangeK [140]"
+2.553741,0.010176,,,,,,,,,,0.022888,2.196516,"GeForce GT 630 (0)","1","7","[CUDA memcpy DtoH]"
+2.553804,0.010112,,,,,,,,,,0.022888,2.210418,"GeForce GT 630 (0)","1","7","[CUDA memcpy DtoH]"
+2.559359,2.965332,,,,,,,,,,3.814697,1.256281,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.564295,14.797188,,,,,,,,,,15.529091,1.024866,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.579155,0.028192,,,,,,,,,,0.076294,2.642800,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.579246,0.027840,,,,,,,,,,0.076294,2.676214,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.579351,0.011040,,,,,,,,,,0.038147,3.374357,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.579400,0.011072,,,,,,,,,,0.038147,3.364605,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+2.579468,4.073883,10000,1,1,256,1,1,21,0,0,,,"GeForce GT 630 (0)","1","7","findK [190]"
+2.583568,0.015329,,,,,,,,,,0.038147,2.430224,"GeForce GT 630 (0)","1","7","[CUDA memcpy DtoH]"
