@@ -1,0 +1,61 @@
+==14102== NVPROF is profiling process 14102, command: cuda/lud_cuda -s 256 -v
+==14102== Profiling application: cuda/lud_cuda -s 256 -v
+==14102== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,KB,KB,GB/s,,,,
+151.766846,22.560000,,,,,,,,,,256.000000,10.821836,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+151.806494,211.711000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [89]"
+152.019901,456.957000,7,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [94]"
+152.478554,55.008000,7,7,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [99]"
+152.535258,211.710000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [104]"
+152.748632,456.126000,6,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [109]"
+153.206422,39.552000,6,6,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [114]"
+153.247542,210.462000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [119]"
+153.459796,454.750000,5,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [124]"
+153.916114,29.312000,5,5,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [129]"
+153.946994,209.918000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [134]"
+154.158448,454.142000,4,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [139]"
+154.614158,19.200000,4,4,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [144]"
+154.634926,209.887000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [149]"
+154.846349,454.141000,3,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [154]"
+155.302026,11.872000,3,3,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [159]"
+155.315466,210.015000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [164]"
+155.527017,454.237000,2,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [169]"
+155.982918,5.120000,2,2,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [174]"
+155.989606,209.855000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [179]"
+156.200997,454.397000,1,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_perimeter(float*, int, int) [184]"
+156.657026,3.328000,1,1,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_internal(float*, int, int) [189]"
+156.661922,210.047000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GTX 650 (0)","1","7","lud_diagonal(float*, int, int) [194]"
+156.877121,28.736000,,,,,,,,,,256.000000,8.495985,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+==14225== NVPROF is profiling process 14225, command: cuda/lud_cuda -s 256 -v
+==14225== Profiling application: cuda/lud_cuda -s 256 -v
+==14225== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,us,us,us,
+62.709594,3.184528,7,454.932000,454.142000,456.926000,"lud_perimeter(float*, int, int)"
+33.161731,1.684024,8,210.503000,209.823000,211.999000,"lud_diagonal(float*, int, int)"
+3.236393,0.164351,7,23.478000,3.360000,55.295000,"lud_internal(float*, int, int)"
+0.455593,0.023136,1,23.136000,23.136000,23.136000,"[CUDA memcpy HtoD]"
+0.436689,0.022176,1,22.176000,22.176000,22.176000,"[CUDA memcpy DtoH]"
+
+==14225== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GTX 650 (0)",1,36.000000,36.000000,36.000000
+"Fan (%)","GeForce GTX 650 (0)",1,21.000000,21.000000,21.000000
+
+==14225== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+86.733207,38.183191,1,38.183191,38.183191,38.183191,"cudaMalloc"
+11.554317,5.086641,2,2.543320,0.048613,5.038028,"cudaMemcpy"
+0.907704,0.399605,76,5.257000e-03,9.400000e-05,0.209686,"cuDeviceGetAttribute"
+0.272458,0.119946,1,0.119946,0.119946,0.119946,"cuDeviceTotalMem"
+0.227089,0.099973,22,4.544000e-03,2.940000e-03,0.030908,"cudaLaunch"
+0.162069,0.071349,1,0.071349,0.071349,0.071349,"cudaFree"
+0.108074,0.047578,1,0.047578,0.047578,0.047578,"cuDeviceGetName"
+0.016175,7.121000e-03,66,1.070000e-04,8.100000e-05,5.220000e-04,"cudaSetupArgument"
+0.008768,3.860000e-03,22,1.750000e-04,9.400000e-05,1.652000e-03,"cudaConfigureCall"
+0.005318,2.341000e-03,1,2.341000e-03,2.341000e-03,2.341000e-03,"cuDeviceGetPCIBusId"
+0.003591,1.581000e-03,2,7.900000e-04,2.430000e-04,1.338000e-03,"cuDeviceGetCount"
+0.001231,5.420000e-04,2,2.710000e-04,1.430000e-04,3.990000e-04,"cuDeviceGet"
+==14225== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.
