@@ -1,0 +1,34 @@
+==8630== NVPROF is profiling process 8630, command: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8630== Profiling application: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8630== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+36.964657,8.001000,3,2.667000,2.021000,3.958000,"Fan1(float*, float*, int, int)"
+29.179949,6.316000,3,2.105000,1.909000,2.498000,"Fan2(float*, float*, float*, int, int, int)"
+21.732502,4.704000,3,1.568000,1.408000,1.664000,"[CUDA memcpy DtoH]"
+12.122892,2.624000,3,0.874000,0.800000,1.024000,"[CUDA memcpy HtoD]"
+
+==8630== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",2,624.000000,101.000000,1147.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",2,814.500000,135.000000,1494.000000
+"Temperature (C)","Quadro 6000 (0)",3,72.000000,72.000000,72.000000
+"Fan (%)","Quadro 6000 (0)",2,30.000000,30.000000,30.000000
+
+==8630== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+98.857585,109.891767,3,36.630589,8.660000,109.869418,"cudaMalloc"
+0.673273,0.748422,83,9.017000e-03,0.629000,0.315054,"cuDeviceGetAttribute"
+0.103039,0.114540,3,0.038180,7.613000,0.097987,"cudaFree"
+0.084819,0.094286,6,0.015714,9.080000,0.023257,"cudaMemcpy"
+0.074075,0.082343,1,0.082343,82.343000,0.082343,"cuDeviceTotalMem"
+0.064272,0.071446,6,0.011907,9.777000,0.019905,"cudaLaunch"
+0.057425,0.063835,1,0.063835,63.835000,0.063835,"cuDeviceGetName"
+0.028901,0.032127,6,5.354000e-03,5.168000,6.007000e-03,"cudaThreadSynchronize"
+0.023876,0.026541,30,8.840000e-04,0.628000,5.238000e-03,"cudaSetupArgument"
+0.022807,0.025353,6,4.225000e-03,0.768000,0.021302,"cudaConfigureCall"
+0.003141,3.492000e-03,1,3.492000e-03,3.492000,3.492000e-03,"cuDeviceGetPCIBusId"
+0.002576,2.863000e-03,2,1.431000e-03,1.117000,1.746000e-03,"cuDeviceGet"
+0.002136,2.374000e-03,2,1.187000e-03,0.838000,1.536000e-03,"cuDeviceGetCount"
+0.002074,2.306000e-03,3,7.680000e-04,0.699000,8.380000e-04,"cudaGetLastError"
