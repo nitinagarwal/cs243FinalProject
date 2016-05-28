@@ -1,0 +1,27 @@
+==7520== NVPROF is profiling process 7520, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==7520== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==7520== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,us,us,ms,
+87.799256,13.313593,15,887.572000,4.096000,5.945065,"[CUDA memcpy HtoD]"
+6.145107,0.931824,1,931.824000,931.824000,0.931824,"findK"
+5.918895,0.897522,1,897.522000,897.522000,0.897522,"findRangeK"
+0.136741,0.020735,3,6.911000,6.015000,8.672000e-03,"[CUDA memcpy DtoH]"
+
+==7520== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+82.964514,83.647788,4,20.911947,9.219000,81.804397,"cudaThreadSynchronize"
+14.788621,14.910416,18,0.828356,18.578000,6.361633,"cudaMemcpy"
+0.982954,0.991049,15,0.066069,7.822000,0.183124,"cudaMalloc"
+0.735932,0.741993,15,0.049466,7.054000,0.162381,"cudaFree"
+0.323214,0.325876,83,3.926000e-03,0.559000,0.124108,"cuDeviceGetAttribute"
+0.062829,0.063346,2,0.031673,31.429000,0.031917,"cudaLaunch"
+0.039623,0.039949,1,0.039949,39.949000,0.039949,"cuDeviceTotalMem"
+0.034912,0.035200,1,0.035200,35.200000,0.035200,"cuDeviceGetName"
+0.032836,0.033106,35,9.450000e-04,0.698000,2.165000e-03,"cudaGetLastError"
+0.018356,0.018507,19,9.740000e-04,0.628000,4.330000e-03,"cudaSetupArgument"
+0.009420,9.498000e-03,1,9.498000e-03,9.498000,9.498000e-03,"cudaSetDevice"
+0.003049,3.074000e-03,2,1.537000e-03,1.467000,1.607000e-03,"cudaConfigureCall"
+0.002286,2.305000e-03,2,1.152000e-03,0.838000,1.467000e-03,"cuDeviceGetCount"
+0.001455,1.467000e-03,2,7.330000e-04,0.699000,7.680000e-04,"cuDeviceGet"
