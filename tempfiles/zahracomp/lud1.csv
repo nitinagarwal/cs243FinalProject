@@ -1,0 +1,60 @@
+==10335== NVPROF is profiling process 10335, command: cuda/lud_cuda -s 256 -v
+==10335== Profiling application: cuda/lud_cuda -s 256 -v
+==10335== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,us,us,us,
+53.168611,2.291481,7,327.354000,323.299000,330.851000,"lud_perimeter(float*, int, int)"
+37.910311,1.633873,8,204.234000,202.882000,204.834000,"lud_diagonal(float*, int, int)"
+4.694051,0.202306,7,28.900000,4.481000,67.680000,"lud_internal(float*, int, int)"
+2.188133,0.094305,1,94.305000,94.305000,94.305000,"[CUDA memcpy DtoH]"
+2.038893,0.087873,1,87.873000,87.873000,87.873000,"[CUDA memcpy HtoD]"
+
+==10335== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GT 630 (0)",5,36.800000,36.000000,38.000000
+"Fan (%)","GeForce GT 630 (0)",3,35.000000,35.000000,35.000000
+
+==10335== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+97.244181,191.365617,1,191.365617,191.365617,191.365617,"cudaMalloc"
+2.243621,4.415193,2,2.207596,0.256361,4.158832,"cudaMemcpy"
+0.178503,0.351273,22,0.015966,0.014652,0.034628,"cudaLaunch"
+0.177230,0.348769,76,4.589000e-03,2.250000e-04,0.149708,"cuDeviceGetAttribute"
+0.066989,0.131826,1,0.131826,0.131826,0.131826,"cudaFree"
+0.045421,0.089383,1,0.089383,0.089383,0.089383,"cuDeviceGetName"
+0.024626,0.048461,1,0.048461,0.048461,0.048461,"cuDeviceTotalMem"
+0.009962,0.019605,66,2.970000e-04,2.080000e-04,1.396000e-03,"cudaSetupArgument"
+0.005553,0.010927,22,4.960000e-04,3.790000e-04,2.569000e-03,"cudaConfigureCall"
+0.002184,4.298000e-03,1,4.298000e-03,4.298000e-03,4.298000e-03,"cuDeviceGetPCIBusId"
+0.000998,1.964000e-03,2,9.820000e-04,6.160000e-04,1.348000e-03,"cuDeviceGetCount"
+0.000733,1.443000e-03,2,7.210000e-04,3.270000e-04,1.116000e-03,"cuDeviceGet"
+==10361== NVPROF is profiling process 10361, command: cuda/lud_cuda -s 256 -v
+==10361== Profiling application: cuda/lud_cuda -s 256 -v
+==10361== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,KB,KB,GB/s,,,,
+308.862093,90.689000,,,,,,,,,,256.000000,2.692064,"GeForce GT 630 (0)","1","7","[CUDA memcpy HtoD]"
+308.957838,204.194000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [89]"
+309.164816,331.940000,7,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [94]"
+309.499604,68.321000,7,7,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [99]"
+309.570485,204.418000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [104]"
+309.777527,328.963000,6,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [109]"
+310.109050,49.153000,6,6,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [114]"
+310.160763,204.482000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [119]"
+310.367741,329.572000,5,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [124]"
+310.699905,36.864000,5,5,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [129]"
+310.739841,204.770000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [134]"
+310.947171,325.508000,4,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [139]"
+311.275239,23.104000,4,4,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [144]"
+311.300967,204.578000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [149]"
+311.508105,324.740000,3,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [154]"
+311.835469,14.752000,3,3,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [159]"
+311.852781,202.882000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [164]"
+312.058191,325.220000,2,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [169]"
+312.385939,7.136000,2,2,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [174]"
+312.395667,202.306000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [179]"
+312.600565,326.436000,1,1,1,64,1,1,34,1.228800e+04,0.000000,,,"GeForce GT 630 (0)","1","7","lud_perimeter(float*, int, int) [184]"
+312.929657,4.480000,1,1,1,32,32,1,17,8.192000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_internal(float*, int, int) [189]"
+312.936697,202.306000,1,1,1,32,1,1,33,4.096000e+03,0.000000,,,"GeForce GT 630 (0)","1","7","lud_diagonal(float*, int, int) [194]"
+313.142587,79.265000,,,,,,,,,,256.000000,3.080056,"GeForce GT 630 (0)","1","7","[CUDA memcpy DtoH]"
