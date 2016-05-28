@@ -1,46 +1,46 @@
-==9565== NVPROF is profiling process 9565, command: ./srad 2048 2048 0 127 0 127 0.5 2
-==9565== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
-==9565== Profiling result:
+==9649== NVPROF is profiling process 9649, command: ./srad 2048 2048 0 127 0 127 0.5 2
+==9649== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
+==9649== Profiling result:
 "Time(%)","Time","Calls","Avg","Min","Max","Name"
 %,ms,,ms,ms,ms,
-38.294840,13.234197,2,6.617098,6.520798,6.713399,"[CUDA memcpy DtoH]"
-34.731699,12.002822,2,6.001411,5.995603,6.007219,"[CUDA memcpy HtoD]"
-16.590039,5.733301,2,2.866650,2.865984,2.867317,"srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float)"
-10.383422,3.588375,2,1.794187,1.794075,1.794300,"srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float)"
+36.038426,11.972646,2,5.986323,5.973875,5.998771,"[CUDA memcpy HtoD]"
+35.894431,11.924808,2,5.962404,5.960180,5.964628,"[CUDA memcpy DtoH]"
+17.265719,5.735998,2,2.867999,2.867426,2.868572,"srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float)"
+10.801424,3.588437,2,1.794218,1.794113,1.794324,"srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float)"
 
-==9565== System profiling result:
+==9649== System profiling result:
 "","Device","Count","Avg","Min","Max"
 "SM Clock (MHz)","Quadro 6000 (0)",5,937.800000,101.000000,1147.000000
 "Memory Clock (MHz)","Quadro 6000 (0)",5,1222.200000,135.000000,1494.000000
-"Temperature (C)","Quadro 6000 (0)",9,71.777778,71.000000,73.000000
+"Temperature (C)","Quadro 6000 (0)",9,70.777778,70.000000,72.000000
 "Fan (%)","Quadro 6000 (0)",5,30.000000,30.000000,30.000000
 
-==9565== API calls:
+==9649== API calls:
 "Time(%)","Time","Calls","Avg","Min","Max","Name"
 %,ms,,ms,ms,ms,
-73.386871,107.599298,6,17.933216,0.154280,106.745348,"cudaMalloc"
-25.417456,37.266890,4,9.316722,6.151690,12.880339,"cudaMemcpy"
-0.497445,0.729350,83,8.787000e-03,6.280000e-04,0.307232,"cuDeviceGetAttribute"
-0.429091,0.629130,6,0.104855,0.084438,0.166991,"cudaFree"
-0.085837,0.125854,1,0.125854,0.125854,0.125854,"cuDeviceGetName"
-0.080502,0.118032,4,0.029508,0.010756,0.051682,"cudaLaunch"
-0.055590,0.081505,1,0.081505,0.081505,0.081505,"cuDeviceTotalMem"
-0.026250,0.038487,38,1.012000e-03,6.980000e-04,9.149000e-03,"cudaSetupArgument"
-0.008002,0.011733,1,0.011733,0.011733,0.011733,"cudaThreadSynchronize"
-0.005906,8.660000e-03,4,2.165000e-03,7.680000e-04,4.330000e-03,"cudaConfigureCall"
-0.002715,3.980000e-03,2,1.990000e-03,9.770000e-04,3.003000e-03,"cuDeviceGet"
-0.002525,3.702000e-03,1,3.702000e-03,3.702000e-03,3.702000e-03,"cuDeviceGetPCIBusId"
-0.001810,2.654000e-03,2,1.327000e-03,1.117000e-03,1.537000e-03,"cuDeviceGetCount"
-==9584== NVPROF is profiling process 9584, command: ./srad 2048 2048 0 127 0 127 0.5 2
-==9584== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
-==9584== Profiling result:
+72.300162,95.531421,6,15.921903,0.149460,94.708482,"cudaMalloc"
+26.358102,34.827404,4,8.706851,6.094700,11.292148,"cudaMemcpy"
+0.581696,0.768605,83,9.260000e-03,6.280000e-04,0.324203,"cuDeviceGetAttribute"
+0.484385,0.640026,6,0.106671,0.083670,0.166153,"cudaFree"
+0.091074,0.120337,4,0.030084,0.010686,0.051403,"cudaLaunch"
+0.067287,0.088908,1,0.088908,0.088908,0.088908,"cuDeviceTotalMem"
+0.055817,0.073752,1,0.073752,0.073752,0.073752,"cuDeviceGetName"
+0.039542,0.052248,38,1.374000e-03,6.980000e-04,0.015086,"cudaSetupArgument"
+0.008616,0.011384,1,0.011384,0.011384,0.011384,"cudaThreadSynchronize"
+0.006500,8.589000e-03,4,2.147000e-03,8.380000e-04,4.539000e-03,"cudaConfigureCall"
+0.002696,3.562000e-03,1,3.562000e-03,3.562000e-03,3.562000e-03,"cuDeviceGetPCIBusId"
+0.002220,2.933000e-03,2,1.466000e-03,1.466000e-03,1.467000e-03,"cuDeviceGetCount"
+0.001903,2.515000e-03,2,1.257000e-03,1.048000e-03,1.467000e-03,"cuDeviceGet"
+==9659== NVPROF is profiling process 9659, command: ./srad 2048 2048 0 127 0 127 0.5 2
+==9659== Profiling application: ./srad 2048 2048 0 127 0 127 0.5 2
+==9659== Profiling result:
 "Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
 ms,ms,,,,,,,,B,KB,MB,GB/s,,,,
-497.177763,6.086481,,,,,,,,,,16.000000,2.567165,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
-503.265447,2.867433,128,128,1,16,16,1,19,6.144000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float) [107]"
-506.134705,1.790990,128,128,1,16,16,1,17,5.120000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float) [119]"
-507.929660,6.571006,,,,,,,,,,16.000000,2.377870,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
-515.438869,5.952150,,,,,,,,,,16.000000,2.625102,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
-521.391229,2.864533,128,128,1,16,16,1,19,6.144000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float) [132]"
-524.929932,1.793066,128,128,1,16,16,1,17,5.120000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float) [144]"
-526.726649,6.987629,,,,,,,,,,16.000000,2.236095,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+502.124178,5.997235,,,,,,,,,,16.000000,2.605367,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+508.122566,2.869039,128,128,1,16,16,1,19,6.144000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float) [107]"
+510.993407,1.793864,128,128,1,16,16,1,17,5.120000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float) [119]"
+512.791309,5.959733,,,,,,,,,,16.000000,2.621762,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+519.684061,5.945077,,,,,,,,,,16.000000,2.628225,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+525.629193,2.867473,128,128,1,16,16,1,19,6.144000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_1(float*, float*, float*, float*, float*, float*, int, int, float) [132]"
+528.498475,1.790838,128,128,1,16,16,1,17,5.120000e+03,0.000000,,,"Quadro 6000 (0)","1","7","srad_cuda_2(float*, float*, float*, float*, float*, float*, int, int, float, float) [144]"
+530.293402,6.034546,,,,,,,,,,16.000000,2.589259,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
