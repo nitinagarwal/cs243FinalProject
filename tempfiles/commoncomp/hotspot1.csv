@@ -1,0 +1,40 @@
+==10711== NVPROF is profiling process 10711, command: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10711== Profiling application: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10711== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+42.857832,390.770000,2,195.385000,191.417000,199.353000,"[CUDA memcpy HtoD]"
+37.773393,344.411000,1,344.411000,344.411000,344.411000,"calculate_temp(int, float*, float*, float*, int, int, int, int, float, float, float, float, float, float)"
+19.368775,176.601000,1,176.601000,176.601000,176.601000,"[CUDA memcpy DtoH]"
+
+==10711== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",3,944.666667,540.000000,1147.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",3,1494.000000,1494.000000,1494.000000
+"Temperature (C)","Quadro 6000 (0)",6,74.000000,74.000000,74.000000
+"Fan (%)","Quadro 6000 (0)",3,30.000000,30.000000,30.000000
+
+==10711== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+96.151929,92.006742,3,30.668914,139.962000,91.527980,"cudaMalloc"
+2.538809,2.429359,3,0.809786,381.613000,1.561162,"cudaMemcpy"
+0.709304,0.678725,83,8.177000e-03,0.628000,0.291168,"cuDeviceGetAttribute"
+0.369464,0.353536,3,0.117845,84.089000,0.182285,"cudaFree"
+0.084373,0.080736,1,0.080736,80.736000,0.080736,"cuDeviceTotalMem"
+0.062477,0.059784,1,0.059784,59.784000,0.059784,"cuDeviceGetName"
+0.050071,0.047912,1,0.047912,47.912000,0.047912,"cudaLaunch"
+0.019413,0.018576,14,1.326000e-03,0.838000,5.308000e-03,"cudaSetupArgument"
+0.004307,4.121000e-03,1,4.121000e-03,4.121000,4.121000e-03,"cudaConfigureCall"
+0.003722,3.562000e-03,2,1.781000e-03,0.978000,2.584000e-03,"cuDeviceGet"
+0.003576,3.422000e-03,1,3.422000e-03,3.422000,3.422000e-03,"cuDeviceGetPCIBusId"
+0.002555,2.445000e-03,2,1.222000e-03,0.838000,1.607000e-03,"cuDeviceGetCount"
+==10758== NVPROF is profiling process 10758, command: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10758== Profiling application: ./hotspot 512 2 2 ../../data/hotspot/temp_512 ../../data/hotspot/power_512 output.out
+==10758== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,KB,MB,GB/s,,,,
+211.261284,191.321000,,,,,,,,,,1.000000,5.104314,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+211.966473,212.568000,,,,,,,,,,1.000000,4.594118,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+212.181006,344.408000,43,43,1,16,16,1,34,3.072000e+03,0.000000,,,"Quadro 6000 (0)","1","7","calculate_temp(int, float*, float*, float*, int, int, int, int, float, float, float, float, float, float) [110]"
+212.528563,176.921000,,,,,,,,,,1.000000,5.519766,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
