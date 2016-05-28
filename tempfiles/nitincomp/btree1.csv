@@ -1,0 +1,58 @@
+==12042== NVPROF is profiling process 12042, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==12042== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==12042== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+s,ms,,,,,,,,B,B,MB,GB/s,,,,
+1.297874,2.256345,,,,,,,,,,15.529091,6.721103,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300147,5.888000e-03,,,,,,,,,,0.045776,7.592304,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300163,5.888000e-03,,,,,,,,,,0.045776,7.592304,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300181,5.888000e-03,,,,,,,,,,0.045776,7.592304,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300198,5.920000e-03,,,,,,,,,,0.045776,7.551264,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300212,3.200000e-03,,,,,,,,,,0.022888,6.984919,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300223,3.200000e-03,,,,,,,,,,0.022888,6.984919,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300234,3.232000e-03,,,,,,,,,,0.022888,6.915762,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300244,3.232000e-03,,,,,,,,,,0.022888,6.915762,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.300292,2.808847,6000,1,1,256,1,1,25,0,0,,,"GeForce GTX 650 (0)","1","7","findRangeK [140]"
+1.303114,3.584000e-03,,,,,,,,,,0.022888,6.236535,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+1.303130,3.552000e-03,,,,,,,,,,0.022888,6.292720,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+1.305105,0.470072,,,,,,,,,,3.814697,7.924936,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.305685,2.123835,,,,,,,,,,15.529091,7.140445,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.307825,8.288000e-03,,,,,,,,,,0.076294,8.989600,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.307847,7.808000e-03,,,,,,,,,,0.076294,9.542239,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.307867,4.992000e-03,,,,,,,,,,0.038147,7.462521,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.307882,4.992000e-03,,,,,,,,,,0.038147,7.462521,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+1.307916,3.137801,10000,1,1,256,1,1,21,0,0,,,"GeForce GTX 650 (0)","1","7","findK [190]"
+1.311066,5.056000e-03,,,,,,,,,,0.038147,7.368058,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+==12165== NVPROF is profiling process 12165, command: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==12165== Profiling application: ./b+tree.out file ../../data/b+tree/mil.txt command ../../data/b+tree/command.txt
+==12165== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+45.409407,4.955628,15,0.330375,3.200000e-03,2.271481,"[CUDA memcpy HtoD]"
+28.744379,3.136937,1,3.136937,3.136937,3.136937,"findK"
+25.736265,2.808655,1,2.808655,2.808655,2.808655,"findRangeK"
+0.109949,0.011999,3,3.999000e-03,3.583000e-03,4.832000e-03,"[CUDA memcpy DtoH]"
+
+==12165== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GTX 650 (0)",24,36.458333,36.000000,37.000000
+"Fan (%)","GeForce GTX 650 (0)",12,21.000000,21.000000,21.000000
+
+==12165== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+86.004609,44.054999,4,11.013749,4.200000,38.101966,"cudaThreadSynchronize"
+10.794031,5.529134,18,0.307174,10.384000,2.385105,"cudaMemcpy"
+1.124941,0.576240,15,0.038416,3.734000,0.119994,"cudaMalloc"
+0.845106,0.432897,15,0.028859,3.349000,0.097208,"cudaFree"
+0.716506,0.367023,83,4.421000e-03,0.094000,0.148096,"cuDeviceGetAttribute"
+0.239089,0.122471,1,0.122471,122.471000,0.122471,"cuDeviceTotalMem"
+0.110909,0.056812,2,0.028406,23.413000,0.033399,"cudaLaunch"
+0.102218,0.052360,1,0.052360,52.360000,0.052360,"cuDeviceGetName"
+0.022023,0.011281,1,0.011281,11.281000,0.011281,"cudaSetDevice"
+0.016481,8.442000e-03,35,2.410000e-04,0.124000,8.300000e-04,"cudaGetLastError"
+0.011274,5.775000e-03,19,3.030000e-04,0.120000,2.420000e-03,"cudaSetupArgument"
+0.005294,2.712000e-03,1,2.712000e-03,2.712000,2.712000e-03,"cuDeviceGetPCIBusId"
+0.003407,1.745000e-03,2,8.720000e-04,0.227000,1.518000e-03,"cuDeviceGetCount"
+0.002881,1.476000e-03,2,7.380000e-04,0.675000,8.010000e-04,"cudaConfigureCall"
+0.001232,6.310000e-04,2,3.150000e-04,0.119000,5.120000e-04,"cuDeviceGet"

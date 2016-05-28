@@ -1,0 +1,49 @@
+==15410== NVPROF is profiling process 15410, command: ./gaussian -f ../../data/gaussian/matrix4.txt
+==15410== Profiling application: ./gaussian -f ../../data/gaussian/matrix4.txt
+==15410== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,B,MB/s,,,,
+150.924075,0.768000,,,,,,,,,,64,79.472860,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+150.932203,0.544000,,,,,,,,,,64,112.196978,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+150.940363,0.544000,,,,,,,,,,16,28.049245,"GeForce GTX 650 (0)","1","7","[CUDA memcpy HtoD]"
+150.970155,2.464000,1,1,1,512,1,1,11,0,0,,,"GeForce GTX 650 (0)","1","7","Fan1(float*, float*, int, int) [101]"
+150.985931,2.144000,1,1,1,4,4,1,14,0,0,,,"GeForce GTX 650 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [110]"
+150.999307,1.408000,1,1,1,512,1,1,11,0,0,,,"GeForce GTX 650 (0)","1","7","Fan1(float*, float*, int, int) [118]"
+151.010219,1.664000,1,1,1,4,4,1,14,0,0,,,"GeForce GTX 650 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [127]"
+151.020843,1.408000,1,1,1,512,1,1,11,0,0,,,"GeForce GTX 650 (0)","1","7","Fan1(float*, float*, int, int) [135]"
+151.031275,1.664000,1,1,1,4,4,1,14,0,0,,,"GeForce GTX 650 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [144]"
+151.043531,1.376000,,,,,,,,,,64,44.356945,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+151.053387,1.344000,,,,,,,,,,64,45.413063,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+151.062027,1.216000,,,,,,,,,,16,12.548346,"GeForce GTX 650 (0)","1","7","[CUDA memcpy DtoH]"
+==15568== NVPROF is profiling process 15568, command: ./gaussian -f ../../data/gaussian/matrix4.txt
+==15568== Profiling application: ./gaussian -f ../../data/gaussian/matrix4.txt
+==15568== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+33.593750,5.504000,3,1.834000,1.408000,2.656000,"Fan1(float*, float*, int, int)"
+31.640625,5.184000,3,1.728000,1.632000,1.888000,"Fan2(float*, float*, float*, int, int, int)"
+23.632812,3.872000,3,1.290000,1.216000,1.344000,"[CUDA memcpy DtoH]"
+11.132812,1.824000,3,0.608000,0.512000,0.768000,"[CUDA memcpy HtoD]"
+
+==15568== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"Temperature (C)","GeForce GTX 650 (0)",1,37.000000,37.000000,37.000000
+"Fan (%)","GeForce GTX 650 (0)",1,21.000000,21.000000,21.000000
+
+==15568== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+98.137592,42.701621,3,14.233873,4.415000,42.691630,"cudaMalloc"
+1.041501,0.453178,83,5.459000e-03,0.160000,0.209095,"cuDeviceGetAttribute"
+0.216430,0.094173,1,0.094173,94.173000,0.094173,"cuDeviceTotalMem"
+0.165809,0.072147,3,0.024049,4.257000,0.060355,"cudaFree"
+0.129659,0.056417,6,9.402000e-03,3.876000,0.014537,"cudaMemcpy"
+0.116855,0.050846,6,8.474000e-03,3.446000,0.028230,"cudaLaunch"
+0.096042,0.041790,1,0.041790,41.790000,0.041790,"cuDeviceGetName"
+0.059694,0.025974,6,4.329000e-03,3.939000,4.685000e-03,"cudaThreadSynchronize"
+0.014614,6.359000e-03,30,2.110000e-04,0.122000,2.195000e-03,"cudaSetupArgument"
+0.005925,2.578000e-03,2,1.289000e-03,0.363000,2.215000e-03,"cuDeviceGetCount"
+0.005856,2.548000e-03,1,2.548000e-03,2.548000,2.548000e-03,"cuDeviceGetPCIBusId"
+0.004203,1.829000e-03,6,3.040000e-04,0.139000,9.490000e-04,"cudaConfigureCall"
+0.003521,1.532000e-03,3,5.100000e-04,0.180000,1.153000e-03,"cudaGetLastError"
+0.002298,1.000000e-03,2,5.000000e-04,0.198000,8.020000e-04,"cuDeviceGet"
