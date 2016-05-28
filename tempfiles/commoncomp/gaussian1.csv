@@ -1,0 +1,51 @@
+==8819== NVPROF is profiling process 8819, command: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8819== Profiling application: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8819== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,us,,us,us,us,
+36.313317,7.807000,3,2.602000,2.014000,3.775000,"Fan1(float*, float*, int, int)"
+29.452533,6.332000,3,2.110000,1.910000,2.512000,"Fan2(float*, float*, float*, int, int, int)"
+21.731243,4.672000,3,1.557000,1.408000,1.632000,"[CUDA memcpy DtoH]"
+12.502907,2.688000,3,0.896000,0.800000,1.024000,"[CUDA memcpy HtoD]"
+
+==8819== System profiling result:
+"","Device","Count","Avg","Min","Max"
+"SM Clock (MHz)","Quadro 6000 (0)",1,101.000000,101.000000,101.000000
+"Memory Clock (MHz)","Quadro 6000 (0)",1,135.000000,135.000000,135.000000
+"Temperature (C)","Quadro 6000 (0)",2,77.000000,77.000000,77.000000
+"Fan (%)","Quadro 6000 (0)",1,30.000000,30.000000,30.000000
+
+==8819== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,us,ms,
+98.681033,99.180559,3,33.060186,10.895000,99.156953,"cudaMalloc"
+0.755481,0.759305,83,9.148000e-03,0.628000,0.321759,"cuDeviceGetAttribute"
+0.135296,0.135981,3,0.045327,9.778000,0.114819,"cudaFree"
+0.103747,0.104272,6,0.017378,11.454000,0.022489,"cudaMemcpy"
+0.092213,0.092680,6,0.015446,12.572000,0.022838,"cudaLaunch"
+0.089016,0.089467,1,0.089467,89.467000,0.089467,"cuDeviceTotalMem"
+0.066224,0.066559,1,0.066559,66.559000,0.066559,"cuDeviceGetName"
+0.031618,0.031778,6,5.296000e-03,4.470000,6.495000e-03,"cudaThreadSynchronize"
+0.027099,0.027236,30,9.070000e-04,0.698000,4.260000e-03,"cudaSetupArgument"
+0.006393,6.425000e-03,6,1.070000e-03,0.838000,1.885000e-03,"cudaConfigureCall"
+0.003474,3.492000e-03,1,3.492000e-03,3.492000,3.492000e-03,"cuDeviceGetPCIBusId"
+0.003057,3.072000e-03,2,1.536000e-03,1.536000,1.536000e-03,"cuDeviceGetCount"
+0.002778,2.792000e-03,3,9.300000e-04,0.907000,9.770000e-04,"cudaGetLastError"
+0.002572,2.585000e-03,2,1.292000e-03,1.048000,1.537000e-03,"cuDeviceGet"
+==8829== NVPROF is profiling process 8829, command: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8829== Profiling application: ./gaussian -f ../../data/gaussian/matrix4.txt
+==8829== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,B,MB/s,,,,
+215.745711,1.024000,,,,,,,,,,64,59.604645,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+215.759182,0.800000,,,,,,,,,,64,76.293945,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+215.772046,0.800000,,,,,,,,,,16,19.073486,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
+215.811607,3.769000,1,1,1,512,1,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan1(float*, float*, int, int) [101]"
+215.845430,2.512000,1,1,1,4,4,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [110]"
+215.874573,2.013000,1,1,1,512,1,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan1(float*, float*, int, int) [118]"
+215.904233,1.906000,1,1,1,4,4,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [127]"
+215.932005,2.018000,1,1,1,512,1,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan1(float*, float*, int, int) [135]"
+215.962784,1.910000,1,1,1,4,4,1,12,0,0,,,"Quadro 6000 (0)","1","7","Fan2(float*, float*, float*, int, int, int) [144]"
+215.986023,1.632000,,,,,,,,,,64,37.398993,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+216.006886,1.632000,,,,,,,,,,64,37.398993,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+216.027686,1.440000,,,,,,,,,,16,10.596381,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
