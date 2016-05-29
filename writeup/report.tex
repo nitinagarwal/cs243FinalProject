@@ -109,7 +109,7 @@ There are some parameters in which we compared and analyzed within these three  
 The GPU computing approach uses graphic card to perform the calculation in parallel. This approach is based on CUDA which is made by NVIDIA and works on NVIDIA graphic cards that have Compute Capability 2.0 or higher. The point is worth mentioning that only hydrodynamic calculations are performed on the GPU and the additional calculations are ran on the CPU. Then these calculations are parallelised using shared memory approach, OpenMP.
 
 
-\subsubsection{Hardware}
+\subsection{Hardware}
 Following are the graphic cards which we used for performing benchmarks:\\
 \newline
 \begin{tabular}{|l| c| c| c|}
@@ -117,11 +117,11 @@ Following are the graphic cards which we used for performing benchmarks:\\
 	GPU & Compute 
 Capability & Number of CUDA cores & Memory (GB)\\
 	\hline
-    GeForce GTX 530 & XXX & XXX & XXX  \\
+    GeForce GT 630 & 2.1 & 96 & 1.8  \\
 	\hline
-    Geforce GTX 550 & XXX & XXX & XXX \\
+    Geforce GTX 650 & 3.0 & 384 & 5 \\
 	\hline
-    Quadro 6000 & XXX & XXX & XXX \\
+    Quadro 6000 & 2.0 & 448 & 6 \\
 	\hline
 \end{tabular}
 \\
@@ -130,22 +130,21 @@ GPU specifications
 \\
 following hardware platforms have been used:\\
 \newline
-\begin{tabular}{|l| c| c| c| c|}
+\begin{tabular}{| c| c| c| c|}
 	\hline
-	 & Compute 
-Model & Processor & Memory (GB)& Operating system\\
+	  & Processor & Memory (GB)& Operating system\\
 	\hline
-    1 & DELL Precision T5400 & XXX & XXX& XXX \\
+    1  & Intel Xeon(R) E5405 (4 cores, 2.00GHz) & 2& ubuntu 14.04 \\
 	\hline
-    2 & XXX & XXX & XXX& XXX \\
+    2  & XXX & XXX& ubuntu 14.04 \\
 	\hline
-    3 & XXX & XXX & XXX& XXX \\
+    3  & Intel Core 2 Quad Q9400 (4 cores, 2.66GHz) & 7.8& ubuntu 14.04 \\
 	\hline
 \end{tabular}
 \\
 Hardware platforms
 
-\subsubsection{Software}
+\subsection{Software}
 All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
 \newpage
 \section{Description of Benchmarks}
@@ -157,7 +156,7 @@ Graph algorithms are fundamental and widely used in many disciplines and applica
 \subsection{K-Nearest Neighbor}
 NN (Nearest Neighbor) finds the k-nearest neighbors from an unstructured data set. The sequential NN algorithm reads in one record at a time, calculates the Euclidean distance from the target latitude and longitude, and evaluates the k nearest neighbors. The parallel versions read in many records at a time, execute the distance calculation on multiple threads, and the master thread updates the list of nearest neighbors.
 
-\subsection{B+ Tree}
+\subsection{B+Tree}
 B+ Tree application has many internal commands that maintain database and process querries. Only J and K commands had enough parallelism to be ported to parallel languages (OpenMP, CUDA, OpenCL). In these implementations, in case of both J and K, the same algorithms (optimized for exposing fine-grained parallelism) were used for fair comparison purposes. For C/OpenMP execution, it is possible to use the original algorithm.
 
 \subsection{PathFinder}
@@ -170,26 +169,27 @@ LU Decomposition is an algorithm to calculate the solutions of a set of linear e
 \subsection{Gaussian Elimination}
 Gaussian Elimination computes result row by row, solving for all of the variables in a linear system. The algorithm must synchronize between iterations, but the values calculated in each iteration can be computed in parallel.
 
-\subsection{SRAD}
-SRAD (Speckle Reducing Anisotropic Diffusion) is a diffusion method for ultrasonic and radar imaging applications based on partial differential equations (PDEs). It is used to remove locally correlated noise, known as speckles, without destroying important image features. SRAD consists of several pieces of work: image extraction, continuous iterations over the image (preparation, reduction, statistics, computation 1 and computation 2) and image compression. The sequential dependency between all of these stages requires synchronization after each stage (because each stage operates on the entire image). SRAD is also uses as one of the initial stages in the Heart Wall application.
-Partitioning of the working set between caches and avoiding of cache trashing contribute to the performance. In CUDA version, each stage is a separate kernel (due to synchronization requirements) that operates on data already residing in GPU memory. The code features efficient GPU reduction of sums. In order to improve GPU performance data was transferred to GPU at the beginning of the code and then transferred back to CPU after all of the computation stages were completed in GPU. Some of the kernels use GPU shared memory for additional improvement in performance. Speedup achievable with CUDA version depends on the image size (up to the point where GPU saturates).
+\subsection{hotspot}
+HotSpot is a widely used tool to estimate processor temperature based on an architectural floorplan and simulated power measurements. The thermal simulation iteratively solves a series of differential equations for block. Each output cell in the computational grid represents the average temperature value of the corresponding area of the chip. Our CUDA implementation re-implements the transient thermal differential equation solver from HotSpot.
+
 \newpage
-\section{Benchmarking using a GeForce 530}
-These tests have been performed using a GeForce 530 and hardware platform 1 specified in Table XXX.
+\section{Benchmarking using a GeForce GT 630}
+These tests have been performed using a GeForce GT 630 and hardware platform 1 specified in the table in section 2.2.
+\newpage
+\section{Benchmarking using a GeForce GTX 650}
+These tests have been performed using a GeForce GTX 650 and hardware platform 2 specified in the table in section 2.2.
 
-\section{Benchmarking using a GeForce 550}
-These tests have been performed using a GeForce 530 and hardware platform 1 specified in Table XXX.
-
+\newpage
 \section{Benchmarking using a Quadro 6000}
-These tests have been performed using a GeForce 530 and hardware platform 1 specified in Table XXX.
+These tests have been performed using a Quadro 6000 and hardware platform 3 specified in the table in section 2.2.
 \newpage
-/section{Results}
+\section{Results}
 \newpage
-/section{Analysis}
+\section{Analysis}
 \newpage
-/section{Conclusion}
+\section{Conclusion}
 \newpage
-/section{References}
+\section{References}
 
 %%% End document
 \end{document}
