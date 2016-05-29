@@ -30,16 +30,13 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl}
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
-
-\usepackage[english]{babel}															% English language/hyphenation
+\usepackage[english]{babel}			 % English language/hyphenation												
 \usepackage[protrusion=true,expansion=true]{microtype}	
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 
-
-%%% Custom sectioning
-\usepackage{sectsty}
+\usepackage{sectsty}   %%% Custom sectioning
 \allsectionsfont{\centering \normalfont\scshape}
 
 
@@ -77,11 +74,11 @@
 \author{
 		\normalfont 								
         \normalsize
-        Zahra Montazeri \\[-3pt]		
+        Zahra Montazeri (ID??) \\[-3pt]		
         \normalsize 
         \newline
         \normalsize
-        Nitin Agarwal \\[-3pt]		
+        Nitin Agarwal (84246130) \\[-3pt]		
         \normalsize 
         \newline
         \newline
@@ -97,58 +94,35 @@
 \tableofcontents
 \newpage
 \section{Vision and Scope}
-In this project, a set of well-defined test cases for the GPU have been established. This test is used to compare the performance across platforms with different graphics cards. The main focus is to benchmark some parameters of same test cases on different graphic cards. For comparison we did benchmark on three different NVIDIA cards and profile some parameters using nvprof as profiling tool. We have the results as well as analysis on the results at the end of this documentation.\\
-First we searched for GPU programs and performed them on Linux. All benchmarks have been performed using the release 3.1 version of the Rodinia. Later in this report we have the more detail description of these programs.\\
-We used nvporf as NVIDIA profiling tool which is a command-line profiler available for Linux, Windows, and OS X. It helps user to understand and optimize the performance of the CUDA application and easily compare and analyze the result of one benchmark on different GPUs.
-CUDA 7.5 is the version which we used for all three graphic cards in this project.\\
-There are some parameters in which we compared and analyzed within these three  different graphic cards. Calculating execution time is the first parameter we experimented and compare how different NVIDIA cards run same programs. We also consider number of kernel calls and API calls in each program and compare this factor with different machine as well. The percentage of heat released by the program and using fan is another two factors we have covered in this benchmarking. We can also see on which GPU each kernel ran, as well as the grid dimensions used for each launch. Gridsize is Number of blocks in a grid along the X and Y dimensions for a kernel launch. This is very useful when we want to verify that a multi-GPU application is running as we expect. But in this profiling the applications are running just on one GPU. The last but not least parameter we considered for comparing and analysis is regs of each program which is number of registers used per thread for a kernel launch.\\
+In this project, a set of well-defined test cases for GPU have been used to compare the performances of different graphics cards across differnt platforms. The main focus of the project has been to use the various test cases with similar settings on multiple graphics cards, keeping everything else the same. We perform benchmarking on three different NVIDIA Graphic Cards and profile the test cases using an NVIDIA profiler \textbf{nvprof}. We show the results of each of the test cases and further perform analysis.\\
 
-\newpage
-\section{Methodology}
-\subsection{GPU Parallelisation}
-The GPU computing approach uses graphic card to perform the calculation in parallel. This approach is based on CUDA which is made by NVIDIA and works on NVIDIA graphic cards that have Compute Capability 2.0 or higher. The point is worth mentioning that only hydrodynamic calculations are performed on the GPU and the additional calculations are ran on the CPU. Then these calculations are parallelised using shared memory approach, OpenMP.
+The project involved searching of well-known, published test cases, which could be tested on Linux platforms. All benchmarks have been performed using the release 3.1 version of the Rodinia \ref{•}. Several test cases from Rodinia were profiled using nvprof (NVIDIA profiling tool), which is a command-line profiler available for Linux, Windows, and OS X. It helps users to understand and optimize the performance of cuda applications and easily compare and analyze the result of benchmarks on different GPUs. A cuda version of 7.5 was used to benchmark all three graphic cards in this project. The three NVIDIA graphics cards benchmarked are GTX 630, GTX 650 \& Quadro M6000.\\
+
+We chose seven different test cases and profiled several parameters for each test case. We compare and analyze these values across all three different GPU cards. We profiled the following parameters:
+
+\begin{itemize}
+\item
+\textit{Total time for all API calls: } explanation??
+
+\item
+\textit{Total time for all Kernel calls: } explanation??
+
+\item
+\textit{Number of registers per thread for each Kernel call: } explanation?
+
+\item
+\textit{Temperature: } We understand that temperature and fan-speed would be more relevant in for benchmarking mobile GPU's, but for completeness we profiled them both.
+
+\item
+\textit{Fan Speed: }
+\end{itemize}
 
 
-\subsection{Hardware}
-Following are the graphic cards which we used for performing benchmarks:\\
-\newline
-\begin{tabular}{|l| c| c| c|}
-	\hline
-	GPU & Compute 
-Capability & Number of CUDA cores & Memory (GB)\\
-	\hline
-    GeForce GT 630 & 2.1 & 96 & 1.8  \\
-	\hline
-    Geforce GTX 650 & 3.0 & 384 & 5 \\
-	\hline
-    Quadro 6000 & 2.0 & 448 & 6 \\
-	\hline
-\end{tabular}
-\\
-GPU specifications
-\\
-\\
-following hardware platforms have been used:\\
-\newline
-\begin{tabular}{| c| c| c| c|}
-	\hline
-	  & Processor & Memory (GB)& Operating system\\
-	\hline
-    1  & Intel Xeon(R) E5405 (4 cores, 2.00GHz) & 2& ubuntu 14.04 \\
-	\hline
-    2  & XXX & XXX& ubuntu 14.04 \\
-	\hline
-    3  & Intel Core 2 Quad Q9400 (4 cores, 2.66GHz) & 7.8& ubuntu 14.04 \\
-	\hline
-\end{tabular}
-\\
-Hardware platforms
 
-\subsection{Software}
-All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
 \newpage
 \section{Description of Benchmarks}
-Here are brief description for all of the benchmarks we used in this project.
+This section provides a brief description of all the seven test cases used 
+to benchmark the three NVIDIA GPU cards.
 
 \subsection{Breadth First Search}
 Graph algorithms are fundamental and widely used in many disciplines and application areas. Large graphs involving millions of vertices are common in scientific and engineering applications. This benchmark suite provides the GPU implementations of breadth-first search (BFS) algorithm which traverses all the connected components in a graph.
@@ -172,24 +146,163 @@ Gaussian Elimination computes result row by row, solving for all of the variable
 \subsection{hotspot}
 HotSpot is a widely used tool to estimate processor temperature based on an architectural floorplan and simulated power measurements. The thermal simulation iteratively solves a series of differential equations for block. Each output cell in the computational grid represents the average temperature value of the corresponding area of the chip. Our CUDA implementation re-implements the transient thermal differential equation solver from HotSpot.
 
+
+
+
+
+
+\newpage
+\section{Methodology}
+The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking of the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, cuda settings etc.\\
+
+
+Instead of profiling the total execution time, which collectively sums up the CPU \& GPU running time, we only profiled the time for all the API calls and the Kernel calls. Since we are only concerned with GPU benchmarking, this seems reasonable as all three machines have different processors (Table \ref{table1}), which would lead to different CPU running times. We also profiled the number of registers used per thread for each kernel call in each program. And lastly we profiled the GPU temperature and fan speed. Though we understand that for desktop machine people are not that concerned about them, however when compiling different servers temperature and fan speed play an important role.  
+
+\subsection{GPU Parallelisation}
+The GPU computing approach uses graphic card to perform the calculation in parallel. This approach is based on CUDA which is made by NVIDIA and works on NVIDIA graphic cards that have Compute Capability 2.0 or higher. The point is worth mentioning that only hydrodynamic calculations are performed on the GPU and the additional calculations are run on the CPU. Then these calculations are parallelised using shared memory approach, OpenMP.
+
+\subsection{Hardware}
+The following are the specifications of the three NVIDIA graphic cards which were used to perform benchmark:\\
+
+\begin{table}[!h]
+\caption{?}
+\centering
+\begin{tabular}{|l| c| c| c|}
+	\hline
+	GPU & Compute Capability & Number of CUDA cores & Memory (GB)\\
+	\hline
+    GeForce GT 630 & 2.1 & 96 & 1.8  \\
+	\hline
+    Geforce GTX 650 & 3.0 & 384 & 5 \\
+	\hline
+    Quadro 6000 & 2.0 & 448 & 6 \\
+	\hline
+\end{tabular}
+\label{table1}
+\end{table}
+
+The specifications of the machines in which the graphic cards resided are shown in the below table.
+
+\begin{table}[!h]
+\caption{?}
+\centering
+\begin{tabular}{| c| c| c| c|}
+	\hline
+	  & Processor & Memory (GB)& Operating system\\
+	\hline
+    1  & Intel Xeon(R) E5405 (4 cores, 2.00GHz) & 2& ubuntu 14.04 \\
+	\hline
+    2  & ?? & 16 & ubuntu 14.04 \\
+	\hline
+    3  & Intel Core 2 Quad Q9400 (4 cores, 2.66GHz) & 7.8& ubuntu 14.04 \\
+	\hline
+\end{tabular}
+\label{table2}
+\end{table}
+
+
+\subsection{Software}
+All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
+
+
+
 \newpage
 \section{Benchmarking using a GeForce GT 630}
-These tests have been performed using a GeForce GT 630 and hardware platform 1 specified in the table in section 2.2.
+These tests have been performed using a GeForce GT 630 and hardware platform 1 specified in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[scale=0.6]{../imgs/x630.pdf}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+
+
+
 \newpage
 \section{Benchmarking using a GeForce GTX 650}
-These tests have been performed using a GeForce GTX 650 and hardware platform 2 specified in the table in section 2.2.
+These tests have been performed using a GeForce GTX 650 and hardware platform 2 specified in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[scale=0.6]{../imgs/x650.pdf}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+
+
 
 \newpage
 \section{Benchmarking using a Quadro 6000}
-These tests have been performed using a Quadro 6000 and hardware platform 3 specified in the table in section 2.2.
+These tests have been performed using a Quadro 6000 and hardware platform 3 specified in the table in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[scale=0.6]{../imgs/m6000.pdf}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+
+
+
+
+
 \newpage
 \section{Results}
+
+The below figures summarizes all the results from all three different NVIDIA GPU's. 
+
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=8cm]{../imgs/api_calls.png}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=8cm]{../imgs/kernel_calls.png}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/register_thread.png}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/temp.png}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/fan.png}
+\caption{testing}
+\label{??}
+\end{figure*}
+
+
+
+
 \newpage
 \section{Analysis}
+.......
+
+
 \newpage
 \section{Conclusion}
-\newpage
-\section{References}
 
-%%% End document
+Though the test cases ran for several seconds ..if they ran for minutes the differences will be even more profound
+
+
 \end{document}
