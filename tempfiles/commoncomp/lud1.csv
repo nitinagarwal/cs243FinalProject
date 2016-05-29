@@ -1,62 +1,1 @@
-==8969== NVPROF is profiling process 8969, command: cuda/lud_cuda -s 256 -v
-==8969== Profiling application: cuda/lud_cuda -s 256 -v
-==8969== Profiling result:
-"Time(%)","Time","Calls","Avg","Min","Max","Name"
-%,ms,,us,us,us,
-68.136343,6.950540,7,992.934000,992.566000,993.596000,"lud_perimeter(float*, int, int)"
-30.022834,3.062608,8,382.826000,382.739000,383.366000,"lud_diagonal(float*, int, int)"
-0.914191,0.093256,7,13.322000,6.480000,27.160000,"lud_internal(float*, int, int)"
-0.483397,0.049311,1,49.311000,49.311000,49.311000,"[CUDA memcpy HtoD]"
-0.443234,0.045214,1,45.214000,45.214000,45.214000,"[CUDA memcpy DtoH]"
-
-==8969== System profiling result:
-"","Device","Count","Avg","Min","Max"
-"SM Clock (MHz)","Quadro 6000 (0)",2,624.000000,101.000000,1147.000000
-"Memory Clock (MHz)","Quadro 6000 (0)",2,814.500000,135.000000,1494.000000
-"Temperature (C)","Quadro 6000 (0)",3,74.000000,74.000000,74.000000
-"Fan (%)","Quadro 6000 (0)",2,30.000000,30.000000,30.000000
-
-==8969== API calls:
-"Time(%)","Time","Calls","Avg","Min","Max","Name"
-%,ms,,ms,ms,ms,
-90.722608,111.432606,1,111.432606,111.432606,111.432606,"cudaMalloc"
-8.156785,10.018801,2,5.009400,0.132558,9.886243,"cudaMemcpy"
-0.596191,0.732288,76,9.635000e-03,6.280000e-04,0.307371,"cuDeviceGetAttribute"
-0.250133,0.307233,22,0.013965,0.011943,0.031150,"cudaLaunch"
-0.108775,0.133606,1,0.133606,0.133606,0.133606,"cudaFree"
-0.065049,0.079898,1,0.079898,0.079898,0.079898,"cuDeviceTotalMem"
-0.041053,0.050425,1,0.050425,0.050425,0.050425,"cuDeviceGetName"
-0.037177,0.045664,66,6.910000e-04,5.580000e-04,1.606000e-03,"cudaSetupArgument"
-0.015407,0.018924,22,8.600000e-04,6.980000e-04,2.304000e-03,"cudaConfigureCall"
-0.002900,3.562000e-03,1,3.562000e-03,3.562000e-03,3.562000e-03,"cuDeviceGetPCIBusId"
-0.002160,2.653000e-03,2,1.326000e-03,1.117000e-03,1.536000e-03,"cuDeviceGetCount"
-0.001763,2.165000e-03,2,1.082000e-03,7.680000e-04,1.397000e-03,"cuDeviceGet"
-==9003== NVPROF is profiling process 9003, command: cuda/lud_cuda -s 256 -v
-==9003== Profiling application: cuda/lud_cuda -s 256 -v
-==9003== Profiling result:
-"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
-ms,us,,,,,,,,B,KB,KB,GB/s,,,,
-209.363792,49.567000,,,,,,,,,,256.000000,4.925467,"Quadro 6000 (0)","1","7","[CUDA memcpy HtoD]"
-209.415691,383.383000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [89]"
-209.800927,993.660000,7,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [94]"
-210.796569,27.136000,7,7,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [99]"
-210.825532,382.762000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [104]"
-211.209864,992.570000,6,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [109]"
-212.204043,19.870000,6,6,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [114]"
-212.225742,382.755000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [119]"
-212.610039,992.783000,5,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [124]"
-213.604424,13.281000,5,5,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [129]"
-213.619488,382.770000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [134]"
-214.003804,992.849000,4,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [139]"
-214.998251,12.878000,4,4,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [144]"
-215.012939,382.753000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [149]"
-215.397230,992.850000,3,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [154]"
-216.391675,6.409000,3,3,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [159]"
-216.399994,382.749000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [164]"
-216.784292,993.066000,2,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [169]"
-217.778956,6.608000,2,2,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [174]"
-217.787579,382.759000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [179]"
-218.171881,993.079000,1,1,1,64,1,1,36,1.228800e+04,0.000000,,,"Quadro 6000 (0)","1","7","lud_perimeter(float*, int, int) [184]"
-219.166544,6.754000,1,1,1,32,32,1,16,8.192000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_internal(float*, int, int) [189]"
-219.175048,382.763000,1,1,1,32,1,1,36,4.096000e+03,0.000000,,,"Quadro 6000 (0)","1","7","lud_diagonal(float*, int, int) [194]"
-219.561086,45.215000,,,,,,,,,,256.000000,5.399549,"Quadro 6000 (0)","1","7","[CUDA memcpy DtoH]"
+==8969== NVPROF is profiling process 8969, command: cuda/lud_cuda -s 256 -v,,,,,,,,,,,,,,,==8969== Profiling application: cuda/lud_cuda -s 256 -v,,,,,,,,,,,,,,,,==8969== Profiling result:,,,,,,,,,,,,,,,,Time(%),Time,Calls,Avg,Min,Max,Name,,,,,,,,,,%,ms,,us,us,us,,,,,,,,,,,68.136343,6.95054,7,992.934,992.566,993.596,"lud_perimeter(float*, int, int)",,,,,,,,,,30.022834,3.062608,8,382.826,382.739,383.366,"lud_diagonal(float*, int, int)",,,,,,,,,,0.914191,0.093256,7,13.322,6.48,27.16,"lud_internal(float*, int, int)",,,,,,,,,,0.483397,0.049311,1,49.311,49.311,49.311,[CUDA memcpy HtoD],,,,,,,,,,0.443234,0.045214,1,45.214,45.214,45.214,[CUDA memcpy DtoH],,,,,,,,,,,,,,,,,,,,,,,,,,==8969== System profiling result:,,,,,,,,,,,,,,,,,Device,Count,Avg,Min,Max,,,,,,,,,,,SM Clock (MHz),Quadro 6000 (0),2,624,101,1147,,,,,,,,,,,Memory Clock (MHz),Quadro 6000 (0),2,814.5,135,1494,,,,,,,,,,,Temperature (C),Quadro 6000 (0),3,74,74,74,,,,,,,,,,,Fan (%),Quadro 6000 (0),2,30,30,30,,,,,,,,,,,,,,,,,,,,,,,,,,,==8969== API calls:,,,,,,,,,,,,,,,,Time(%),Time,Calls,Avg,Min,Max,Name,,,,,,,,,,%,ms,,ms,ms,ms,,,,,,,,,,,90.722608,111.432606,1,111.432606,111.432606,111.432606,cudaMalloc,,,,,,,,,,8.156785,10.018801,2,5.0094,0.132558,9.886243,cudaMemcpy,,,,,,,,,,0.596191,0.732288,76,9.64E-03,6.28E-04,0.307371,cuDeviceGetAttribute,,,,,,,,,,0.250133,0.307233,22,0.013965,0.011943,0.03115,cudaLaunch,,,,,,,,,,0.108775,0.133606,1,0.133606,0.133606,0.133606,cudaFree,,,,,,,,,,0.065049,0.079898,1,0.079898,0.079898,0.079898,cuDeviceTotalMem,,,,,,,,,,0.041053,0.050425,1,0.050425,0.050425,0.050425,cuDeviceGetName,,,,,,,,,,0.037177,0.045664,66,6.91E-04,5.58E-04,1.61E-03,cudaSetupArgument,,,,,,,,,,0.015407,0.018924,22,8.60E-04,6.98E-04,2.30E-03,cudaConfigureCall,,,,,,,,,,0.0029,3.56E-03,1,3.56E-03,3.56E-03,3.56E-03,cuDeviceGetPCIBusId,,,,,,,,,,0.00216,2.65E-03,2,1.33E-03,1.12E-03,1.54E-03,cuDeviceGetCount,,,,,,,,,,0.001763,2.17E-03,2,1.08E-03,7.68E-04,1.40E-03,cuDeviceGet,,,,,,,,,,==9003== NVPROF is profiling process 9003, command: cuda/lud_cuda -s 256 -v,,,,,,,,,,,,,,,==9003== Profiling application: cuda/lud_cuda -s 256 -v,,,,,,,,,,,,,,,,==9003== Profiling result:,,,,,,,,,,,,,,,,Start,Duration,Grid X,Grid Y,Grid Z,Block X,Block Y,Block Z,Registers Per Thread,Static SMem,Dynamic SMem,Size,Throughput,Device,Context,Stream,Namems,us,,,,,,,,B,KB,KB,GB/s,,,,209.363792,49.567,,,,,,,,,,256,4.925467,Quadro 6000 (0),1,7,[CUDA memcpy HtoD]209.415691,383.383,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [89]"209.800927,993.66,7,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [94]"210.796569,27.136,7,7,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [99]"210.825532,382.762,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [104]"211.209864,992.57,6,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [109]"212.204043,19.87,6,6,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [114]"212.225742,382.755,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [119]"212.610039,992.783,5,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [124]"213.604424,13.281,5,5,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [129]"213.619488,382.77,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [134]"214.003804,992.849,4,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [139]"214.998251,12.878,4,4,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [144]"215.012939,382.753,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [149]"215.39723,992.85,3,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [154]"216.391675,6.409,3,3,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [159]"216.399994,382.749,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [164]"216.784292,993.066,2,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [169]"217.778956,6.608,2,2,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [174]"217.787579,382.759,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [179]"218.171881,993.079,1,1,1,64,1,1,36,1.23E+04,0,,,Quadro 6000 (0),1,7,"lud_perimeter(float*, int, int) [184]"219.166544,6.754,1,1,1,32,32,1,16,8.19E+03,0,,,Quadro 6000 (0),1,7,"lud_internal(float*, int, int) [189]"219.175048,382.763,1,1,1,32,1,1,36,4.10E+03,0,,,Quadro 6000 (0),1,7,"lud_diagonal(float*, int, int) [194]"219.561086,45.215,,,,,,,,,,256,5.399549,Quadro 6000 (0),1,7,[CUDA memcpy DtoH]
