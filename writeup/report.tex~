@@ -213,7 +213,7 @@ These tests have been performed using a GeForce GT 630 and hardware platform 1 s
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/x630.pdf}
-\caption{Time take for each API for seven test cases}
+\caption{testing}
 \label{Time take for each API for seven test cases}
 \end{figure*}
 
@@ -227,7 +227,7 @@ These tests have been performed using a GeForce GTX 650 and hardware platform 2 
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/x650.pdf}
-\caption{Time take for each API for seven test cases}
+\caption{testing}
 \label{Time take for each API for seven test cases}
 \end{figure*}
 
@@ -241,7 +241,7 @@ These tests have been performed using a Quadro 6000 and hardware platform 3 spec
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/m6000.pdf}
-\caption{Time take for each API for seven test cases}
+\caption{testing}
 \label{Time take for each API for seven test cases}
 \end{figure*}
 
@@ -260,34 +260,34 @@ The below figures summarize all the results from all three different NVIDIA GPUs
 \centering
 \includegraphics[width=0.95\textwidth,height=8cm]{../imgs/api_calls.png}
 \caption{Total time for API calls for seven test cases}
-\label{Total time for API calls for seven test cases}
+\label{}
 \end{figure*}
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[width=0.95\textwidth,height=8cm]{../imgs/kernel_calls.png}
-\caption{Total time for kernel calls for seven test cases}
+\caption{testing}
 \label{Total time for kernel calls for seven test cases }
 \end{figure*}
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[width=0.95\textwidth,height=6cm]{../imgs/register_thread.png}
-\caption{Number of registers per thread on each kernel for seven test cases}
+\caption{testing}
 \label{Number of registers per thread on each kernel for seven test cases}
 \end{figure*}
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[width=0.95\textwidth,height=6cm]{../imgs/temp.png}
-\caption{Temperature (C) for seven test cases}
+\caption{testing}
 \label{Temperature (C) for seven test cases}
 \end{figure*}
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[width=0.95\textwidth,height=6cm]{../imgs/fan.png}
-\caption{Fan spean for seven test cases}
+\caption{testing}
 \label{Fan spean for seven test cases}
 \end{figure*}
 
