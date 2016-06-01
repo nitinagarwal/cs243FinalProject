@@ -102,13 +102,13 @@ We chose seven different test cases and profiled several parameters for each tes
 
 \begin{itemize}
 \item
-\textit{Total time for all API calls: } explanation??
+\textit{Total time for all API calls: } We added up the duration of all API calls together to get the total amount of time spending by API calls. 
 
 \item
-\textit{Total time for all Kernel calls: } explanation??
+\textit{Total time for all Kernel calls: } We added up the duration of all kernel calls together to get the total amount of time spending by kernel calls. 
 
 \item
-\textit{Number of registers per thread for each Kernel call: } explanation?
+\textit{Number of registers per thread for each Kernel call: } The number of registers in use affects the occupancy of your GPU since the total number of registers per multiprocessor is limited. In fact it's dependant on the problem but we will want to have our occupancy as high as possible, to avoid ressources from being wasted. On the other hand it is possible that the code is slowed down if the number of registers is restricted.
 
 \item
 \textit{Temperature: } We understand that temperature and fan-speed would be more relevant in for benchmarking mobile GPU's, but for completeness we profiled them both.
@@ -192,7 +192,7 @@ The specifications of the machines in which the graphic cards resided are shown 
 	\hline
     1  & Intel Xeon(R) E5405 (4 cores, 2.00GHz) & 2& ubuntu 14.04 \\
 	\hline
-    2  & ?? & 16 & ubuntu 14.04 \\
+    2  & Nitincomp?? & 16 & ubuntu 14.04 \\
 	\hline
     3  & Intel Core 2 Quad Q9400 (4 cores, 2.66GHz) & 7.8& ubuntu 14.04 \\
 	\hline
@@ -200,11 +200,95 @@ The specifications of the machines in which the graphic cards resided are shown 
 \label{table2}
 \end{table}
 
-
+\newpage
+\clearpage
 \subsection{Software}
 All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
 
+\newpage
+\clearpage
+\section{Comparison of the Graphic Cards}
+Here we have the comparison in performance among GTX 650, GT 630 and Quadro 600 based on reported evaluations. Later we will compare this evaluation with our results to show how they match with the expected values. 
 
+\subsection{Overal evaluation}
+We have used overal evaluations for the aforementioned graphics cards reported by Game Debate. Following is a brief explanation of each parameter in Table \ref{GPU comparison}. Performance score reflects how well you feel the hardware meets your expectations on performance. Lifespan score reflects how long you feel this hardware will last and perform its function. Value score represents how well the graphics card is placed with regards to its price to performance. 
+
+\begin{table}[!h]
+\caption{Evaluation published by Game Debate}
+\centering
+\begin{tabular}{|l|c|c|c|}
+	\hline
+	 & Geforce GTX 650 & Quadro 6000 & Geforce GT 630\\
+	\hline
+      	GPU Architechture & 1 & 1.3 & 1 \\
+	\hline
+    	GPU Memory & 0.5 & 1 & 0.3 \\
+	\hline
+    	GPU Display & 0.4 & 0.8 & 0.2\\
+	\hline
+	GPU Outputs & 1 & 0.7 & 1 \\
+	\hline
+	GPU Features & 1 & 1.3 & 1 \\
+	\hline
+
+\end{tabular}
+\label{GPU comparison}
+\end{table}
+
+A more detailed explanation:\\
+The GTX 650 has a 484 MHz higher core clock speed but 24 fewer Texture Mapping Units than the Quadro 6000. The lower TMU count doesn't matter, though, as altogether the GTX 650 manages to provide 1.8 GTexel/s better texturing performance. This still holds weight but shader performance is generally more relevant, particularly since both of these GPUs support at least DirectX 10.The GTX 650 has a 248 MHz higher core clock speed and 16 more Texture Mapping Units than the GeForce GT 630. This results GT 630 performs worse than the other two.
+
+The GTX 650 has a 484 MHz higher core clock speed than the Quadro 6000, but the Quadro 6000 has 32 more Render Output Units than the GTX 650. As a result, the Quadro 6000 exhibits a 10.7 GPixel/s better Pixel Fill Rate than the GTX 650. However, both GPUs support DirectX 9 or above, and pixeling performance is only really relevant when comparing older cards. These two graphics cards have higher core clock speed and more Render Output Units than the GeForce GT 630. This results GT 630 again to perform the worst.
+
+The GTX 650 was released over a year more recently than the Quadro 6000, and so the GTX 650 is likely to have better driver support, meaning it will be more optimized for running the latest games when compared to the Quadro 6000.The GTX 650 was released less than a year after the GeForce GT 630, and so they are likely to have similar driver support for optimizing performance when running the latest games. 
+
+The Quadro 6000 has 4096 MB more video memory than the GTX 650, so is likely to be much better at displaying game textures at higher resolutions. This is supported by the fact that the Quadro 6000 also has superior memory performance overall. The GeForce GTX 650 1GB and the GeForce GT 630 have the same amount of video memory, but are likely to provide slightly different experiences when displaying game textures at high resolutions.
+
+The Quadro 6000 has 63.4 GB/sec greater memory bandwidth than the GTX 650, which means that the memory performance of the Quadro 6000 is much better than the GTX 650. These two have greater memory bandwidth than the GeForce GT 630, which means that the memory performance of the GTX 630 is much worse than the other two. 
+
+The GeForce GTX 650 2GB has 384 Shader Processing Units, the Quadro 6000 has 448 and the GeForce GT 630 has 96. However, the actual shader performance of the GTX 650 is 406, the actual shader performance of the Quadro 6000 is 514 and the actual shader performance of the GeForce GT 630 is 156. The Quadro 6000 having 108 better shader performance and an altogether better performance when taking into account other relevant data means that the Quadro 6000 delivers a significantly smoother and more efficient experience when processing graphical data than the GTX 650 and GT 630. 
+
+The GTX 650 transistor size technology is 12 nm (nanometers) smaller than the Quadro 6000 as well as GT 630. This means that the GTX 650 is expected to run slightly cooler and achieve higher clock frequencies than both the Quadro 6000 and GT 630.
+
+The GeForce GTX 650 2GB requires 64 Watts to run, the GeForce GT 630 requires 65 Watts and the Quadro 6000 requires 204 Watts. We would recommend a PSU with at least 400 Watts for the GTX 650 and a PSU with at least 600 Watts for the Quadro 6000. The Quadro 6000 requires 140 Watts more than the GTX 650 to run. The difference is significant enough that the Quadro 6000 may have an adverse affect on your yearly electricity bills in comparison to the GTX 650. The GeForce GT 630 requires 1 Watts more than the GTX 650 to run. The difference is not significant enough for the GeForce GT 630 to have a noticeably larger impact on your yearly electricity bills than the GTX 650.
+
+In terms of overall gaming performance, the graphical capabilities of the Nvidia Quadro 6000 are noticeably better than the Nvidia GeForce GTX 650 2GB and massively better than the GT 630.
+
+Here we also have user evaluation on the same graphics cards published by Game Debate.
+
+\begin{table}[!h]
+\caption{User evaluation }
+\centering
+\begin{tabular}{|l|c|c|c|}
+	\hline
+	& Geforce GT 630 & Geforce GTX 650 & Quadro 6000 \\
+	\hline
+      Performance & 6.0 & 8.5 & 9.4 \\
+	\hline
+    Life Span & 7.3 & 8.5 & 7.9 \\
+	\hline
+    Value & 6.9 & 8.7 & 5.4\\
+	\hline
+	Overall & 7.0 & 8.6 & 7.4 \\
+	\hline
+
+\end{tabular}
+\label{User evaluation}
+\end{table}
+
+Now, let's have a brief description of the three graphics cards we used.
+
+\subsection {Review on GT 630}
+GeForce GT 630 is Middle-Class Graphics Card based on the first revision of the Fermi Architecture. The Fermi Architecture is manufactured with a 40nm technology and uses a technique known as Hot Clocking: The Shaders are clocked twice as fast as the Central Unit. While this leads to a reasonable performance boost, it causes enormous amounts of energy dissipation, leading, ultimately, to a significantly higher operating temperature.
+Fermi is also the first GPU architecture with fully cached memory access which increases memory performance. 
+
+\subsection{Review on GTX 650}
+GeForce GTX 650 2GB is a fast-middle-class GPU part of the 600 Series released by NVIDIA in 2012.
+This version features a frame buffer of 2GB. It's known that this GPU does not benefit in any way from a 2GB frame buffer and so this GPU's performance is on level with the 1GB variant. Check the page of the 1GB version for more information about but please note this GPU is just a fast GT 640, paired with GDDR5. Its performance is nothing like next in series - GeForce GTX 650 Ti and barely any fast than previous GTX 550 Ti.
+
+\subsection{Review on Quadro 6000}
+Quadro 6000 is a high-end professional card based on the 40nm, Fermi architecture. It's based on the Fermi GF100 GPU and thus offers 448 Shader Processing Units, 56 TMUs and 48 ROPs, on a 384-bit memory interface of fast GDDR5. The central unit runs at 574MHz and the memory clock operates at up to 747MHz. It has a L2 Cache of 768KB and a rated board TDP of 204 Watts. 
+Despite exhibiting similarities to GeForce GTX 470, due to being under-clocked and because Quadro 6000's drivers are only certified for professional applications only, its gaming performance is up to 10 persent slower than GeForce GTX 470.
 
 \newpage
 \section{Benchmarking using a GeForce GT 630}
@@ -290,76 +374,6 @@ The below figures summarize all the results from all three different NVIDIA GPUs
 \caption{Fan spean for seven test cases}
 \label{Fan spean for seven test cases}
 \end{figure*}
-
-\newpage
-\section{Overal comparison among aforementioned Graphic Cards}
-Here we have the comparison in performance among GTX 650, GT 630 and Quadro 600 based on reported evaluations. Later we will compare this evaluation with our results to show how they match with the expected values.
-We have used overal evaluations for these three graphics cards reported by Game Debate. Following is a brief explanation of each parameter in Table ??. Performance score reflects how well you feel the hardware meets your expectations on performance. Lifespan score reflects how long you feel this hardware will last and perform its function. Value score represents how well the graphics card is placed with regards to its price to performance. 
-
-\begin{table}[!h]
-\caption{Evaluation published by Game Debate}
-\centering
-\begin{tabular}{|l|c|c|c|}
-	\hline
-	 & Geforce GTX 650 & Quadro 6000 & Geforce GT 630\\
-	\hline
-      	GPU Architechture & 1 & 1.3 & 1 \\
-	\hline
-    	GPU Memory & 0.5 & 1 & 0.3 \\
-	\hline
-    	GPU Display & 0.4 & 0.8 & 0.2\\
-	\hline
-	GPU Outputs & 1 & 0.7 & 1 \\
-	\hline
-	GPU Features & 1 & 1.3 & 1 \\
-	\hline
-
-\end{tabular}
-\label{GPU comparison}
-\end{table}
-
-A more detailed explanation:
-The GTX 650 has a 484 MHz higher core clock speed but 24 fewer Texture Mapping Units than the Quadro 6000. The lower TMU count doesn't matter, though, as altogether the GTX 650 manages to provide 1.8 GTexel/s better texturing performance. This still holds weight but shader performance is generally more relevant, particularly since both of these GPUs support at least DirectX 10.The GTX 650 has a 248 MHz higher core clock speed and 16 more Texture Mapping Units than the GeForce GT 630. This results GT 630 performs worse than the other two.
-
-The GTX 650 has a 484 MHz higher core clock speed than the Quadro 6000, but the Quadro 6000 has 32 more Render Output Units than the GTX 650. As a result, the Quadro 6000 exhibits a 10.7 GPixel/s better Pixel Fill Rate than the GTX 650. However, both GPUs support DirectX 9 or above, and pixeling performance is only really relevant when comparing older cards. These two graphics cards have higher core clock speed and more Render Output Units than the GeForce GT 630. This results GT 630 again to perform the worst.
-
-The GTX 650 was released over a year more recently than the Quadro 6000, and so the GTX 650 is likely to have better driver support, meaning it will be more optimized for running the latest games when compared to the Quadro 6000.The GTX 650 was released less than a year after the GeForce GT 630, and so they are likely to have similar driver support for optimizing performance when running the latest games. 
-
-The Quadro 6000 has 4096 MB more video memory than the GTX 650, so is likely to be much better at displaying game textures at higher resolutions. This is supported by the fact that the Quadro 6000 also has superior memory performance overall. The GeForce GTX 650 1GB and the GeForce GT 630 have the same amount of video memory, but are likely to provide slightly different experiences when displaying game textures at high resolutions.
-
-The Quadro 6000 has 63.4 GB/sec greater memory bandwidth than the GTX 650, which means that the memory performance of the Quadro 6000 is much better than the GTX 650. These two have greater memory bandwidth than the GeForce GT 630, which means that the memory performance of the GTX 630 is much worse than the other two. 
-
-The GeForce GTX 650 2GB has 384 Shader Processing Units, the Quadro 6000 has 448 and the GeForce GT 630 has 96. However, the actual shader performance of the GTX 650 is 406, the actual shader performance of the Quadro 6000 is 514 and the actual shader performance of the GeForce GT 630 is 156. The Quadro 6000 having 108 better shader performance and an altogether better performance when taking into account other relevant data means that the Quadro 6000 delivers a significantly smoother and more efficient experience when processing graphical data than the GTX 650 and GT 630. 
-
-The GTX 650 transistor size technology is 12 nm (nanometers) smaller than the Quadro 6000 as well as GT 630. This means that the GTX 650 is expected to run slightly cooler and achieve higher clock frequencies than both the Quadro 6000 and GT 630.
-
-The GeForce GTX 650 2GB requires 64 Watts to run, the GeForce GT 630 requires 65 Watts and the Quadro 6000 requires 204 Watts. We would recommend a PSU with at least 400 Watts for the GTX 650 and a PSU with at least 600 Watts for the Quadro 6000. The Quadro 6000 requires 140 Watts more than the GTX 650 to run. The difference is significant enough that the Quadro 6000 may have an adverse affect on your yearly electricity bills in comparison to the GTX 650. The GeForce GT 630 requires 1 Watts more than the GTX 650 to run. The difference is not significant enough for the GeForce GT 630 to have a noticeably larger impact on your yearly electricity bills than the GTX 650.
-
-In terms of overall gaming performance, the graphical capabilities of the Nvidia Quadro 6000 are noticeably better than the Nvidia GeForce GTX 650 2GB and massively better than the GT 630.
-
-\newline
-Here we also have user evaluation on the same graphics cards published by Game Debate.
-
-\begin{table}[!h]
-\caption{User evaluation published by Game Debate}
-\centering
-\begin{tabular}{|l|c|c|c|}
-	\hline
-	& Geforce GT 630 & Geforce GTX 650 & Quadro 6000 \\
-	\hline
-      Performance & 6.0 & 8.5 & 9.4 \\
-	\hline
-    Life Span & 7.3 & 8.5 & 7.9 \\
-	\hline
-    Value & 6.9 & 8.7 & 5.4\\
-	\hline
-	Overall & 7.0 & 8.6 & 7.4 \\
-	\hline
-
-\end{tabular}
-\label{User evaluation}
-\end{table}
-
 
 
 \newpage

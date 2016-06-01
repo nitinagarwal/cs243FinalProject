@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.31)  31 MAY 2016 17:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.5.31)  31 MAY 2016 17:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -649,7 +649,20 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package tocbasic Info: character protrusion at toc deactivated on input line 94
 .
- (./report.toc)
+ (./report.toc
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 4.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 4.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 4.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 4.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 4.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 4.
+)
 \tf@toc=\write3
 \openout3 = `report.toc'.
 
@@ -683,125 +696,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 170.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 170.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 170.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 170.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 170.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 170.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7] <../imgs/x630.pdf, id=28, 614.295pt x 794.97pt>
+[6] [7] [8
+
+] [9
+
+] [10] [11] <../imgs/x630.pdf, id=41, 614.295pt x 794.97pt>
 File: ../imgs/x630.pdf Graphic file (type pdf)
- <use ../imgs/x630.pdf>
-Package pdftex.def Info: ../imgs/x630.pdf used on input line 215.
-(pdftex.def)             Requested size: 368.57983pt x 476.98569pt.
 
-[8 <../imgs/x630.pdf>] <../imgs/x650.pdf, id=44, 614.295pt x 794.97pt>
+<use ../imgs/x630.pdf>
+Package pdftex.def Info: ../imgs/x630.pdf used on input line 299.
+(pdftex.def)             Requested size: 368.57983pt x 476.98569pt.
+ [12 <../imgs/x630.pdf>]
+<../imgs/x650.pdf, id=57, 614.295pt x 794.97pt>
 File: ../imgs/x650.pdf Graphic file (type pdf)
-
-<use ../imgs/x650.pdf>
-Package pdftex.def Info: ../imgs/x650.pdf used on input line 229.
+ <use ../imgs/x650.pdf>
+Package pdftex.def Info: ../imgs/x650.pdf used on input line 313.
 (pdftex.def)             Requested size: 368.57983pt x 476.98569pt.
- [9 <../imgs/x650.pdf>]
-<../imgs/m6000.pdf, id=60, 614.295pt x 794.97pt>
+ [13 <../imgs/x650.pdf>] <../imgs/m6000.pdf, id=74, 614.295pt x 794.97pt>
 File: ../imgs/m6000.pdf Graphic file (type pdf)
- <use ../imgs/m6000.pdf>
-Package pdftex.def Info: ../imgs/m6000.pdf used on input line 243.
-(pdftex.def)             Requested size: 368.57983pt x 476.98569pt.
 
-[10 <../imgs/m6000.pdf>]
-<../imgs/api_calls.png, id=76, 728.4816pt x 379.1766pt>
+<use ../imgs/m6000.pdf>
+Package pdftex.def Info: ../imgs/m6000.pdf used on input line 327.
+(pdftex.def)             Requested size: 368.57983pt x 476.98569pt.
+ [14 <../imgs/m6000.pdf>]
+<../imgs/api_calls.png, id=90, 728.4816pt x 379.1766pt>
 File: ../imgs/api_calls.png Graphic file (type png)
 
 <use ../imgs/api_calls.png>
-Package pdftex.def Info: ../imgs/api_calls.png used on input line 261.
+Package pdftex.def Info: ../imgs/api_calls.png used on input line 345.
 (pdftex.def)             Requested size: 397.34251pt x 227.62343pt.
 
-<../imgs/kernel_calls.png, id=78, 728.4816pt x 380.1402pt>
+<../imgs/kernel_calls.png, id=92, 728.4816pt x 380.1402pt>
 File: ../imgs/kernel_calls.png Graphic file (type png)
 
 <use ../imgs/kernel_calls.png>
-Package pdftex.def Info: ../imgs/kernel_calls.png used on input line 268.
+Package pdftex.def Info: ../imgs/kernel_calls.png used on input line 352.
 (pdftex.def)             Requested size: 397.34251pt x 227.62762pt.
 
-<../imgs/register_thread.png, id=79, 828.696pt x 360.3864pt>
+<../imgs/register_thread.png, id=93, 828.696pt x 360.3864pt>
 File: ../imgs/register_thread.png Graphic file (type png)
 
 <use ../imgs/register_thread.png>
-Package pdftex.def Info: ../imgs/register_thread.png used on input line 275.
+Package pdftex.def Info: ../imgs/register_thread.png used on input line 359.
 (pdftex.def)             Requested size: 397.33963pt x 170.7179pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../imgs/temp.png, id=80, 605.6226pt x 280.4076pt>
+<../imgs/temp.png, id=94, 605.6226pt x 280.4076pt>
 File: ../imgs/temp.png Graphic file (type png)
  <use ../imgs/temp.png>
-Package pdftex.def Info: ../imgs/temp.png used on input line 282.
+Package pdftex.def Info: ../imgs/temp.png used on input line 366.
 (pdftex.def)             Requested size: 397.35568pt x 170.71465pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../imgs/fan.png, id=81, 605.1408pt x 280.4076pt>
+<../imgs/fan.png, id=95, 605.1408pt x 280.4076pt>
 File: ../imgs/fan.png Graphic file (type png)
  <use ../imgs/fan.png>
-Package pdftex.def Info: ../imgs/fan.png used on input line 289.
+Package pdftex.def Info: ../imgs/fan.png used on input line 373.
 (pdftex.def)             Requested size: 397.34427pt x 170.71465pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <../imgs/api_calls.png> <../imgs/kernel_calls.png>]
+[15 <../imgs/api_calls.png> <../imgs/kernel_calls.png>] [16 <../imgs/register_t
+hread.png> <../imgs/temp.png>] [17 <../imgs/fan.png>] (./report.aux)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: There were undefined references.
 
-[12 <../imgs/register_thread.png> <../imgs/temp.png>] [13 <../imgs/fan.png>]
 
-! LaTeX Error: There's no line here to end.
+LaTeX Warning: There were multiply-defined labels.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.340 \newline
-              
-? h
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-? 
-! Interruption.
-\GenericError  ...                                
-                                                  \endgroup 
-l.340 \newline
-              
-? x
- 
+ ) 
 Here is how much of TeX's memory you used:
- 7046 strings out of 495028
- 107595 string characters out of 6181497
- 229395 words of memory out of 5000000
- 9870 multiletter control sequences out of 15000+600000
- 110550 words of font info for 242 fonts, out of 8000000 for 9000
+ 7069 strings out of 495028
+ 107846 string characters out of 6181497
+ 229405 words of memory out of 5000000
+ 9873 multiletter control sequences out of 15000+600000
+ 111930 words of font info for 257 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  47i,10n,47p,721b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/a
-dobe/utopia/putri8a.pfb>
-Output written on report.pdf (13 pages, 1743356 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/u
+topia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/adobe/utopia/putri8
+a.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb>
+Output written on report.pdf (17 pages, 1773094 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  44073 words of extra memory for PDF output out of 51595 (max. 10000000)
 
