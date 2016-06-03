@@ -36,6 +36,8 @@
 \usepackage[pdftex]{graphicx}	
 \usepackage{url}
 
+\usepackage{hyperref}
+\usepackage{bibentry}
 \usepackage{sectsty}   %%% Custom sectioning
 \allsectionsfont{\centering \normalfont\scshape}
 
@@ -94,9 +96,9 @@
 \tableofcontents
 \newpage
 \section{Vision and Scope}
-In this project, a set of well-defined test cases for GPU have been used to compare the performances of different graphics cards across differnt platforms. The main focus of the project has been to use the various test cases with similar settings on multiple graphics cards, keeping everything else the same. We perform benchmarking on three different NVIDIA Graphic Cards and profile the test cases using an NVIDIA profiler \textbf{nvprof}. We show the results of each of the test cases and further perform analysis.\\
+In this project, a set of well-defined test cases for GPU have been used to compare the performances of different graphics cards across differnt platforms. The main focus of the project has been to use the various test cases with similar settings on multiple graphics cards, keeping everything else the same. We perform benchmarking on three different NVIDIA Graphic Cards and profile the test cases using an NVIDIA profiler \textbf{nvprof} \cite{nvprof}. We show the results of each of the test cases and further perform analysis.\\
 
-The project involved searching of well-known, published test cases, which could be tested on Linux platforms. All benchmarks have been performed using the release 3.1 version of the Rodinia \ref{•}. Several test cases from Rodinia were profiled using nvprof (NVIDIA profiling tool), which is a command-line profiler available for Linux, Windows, and OS X. It helps users to understand and optimize the performance of cuda applications and easily compare and analyze the result of benchmarks on different GPUs. A cuda version of 7.5 was used to benchmark all three graphic cards in this project. The three NVIDIA graphics cards benchmarked are GTX 630, GTX 650 \& Quadro M6000.\\
+The project involved searching of well-known, published test cases, which could be tested on Linux platforms. All benchmarks have been performed using the release 3.1 version of the Rodinia \cite{rodinia}. Several test cases from Rodinia were profiled using nvprof (NVIDIA profiling tool), which is a command-line profiler available for Linux, Windows, and OS X. It helps users to understand and optimize the performance of CUDA applications and easily compare and analyze the result of benchmarks on different GPUs\cite{CUDA}. A CUDA version of 7.5 was used to benchmark all three graphic cards in this project. The three NVIDIA graphics cards benchmarked are GTX 630, GTX 650 \& Quadro M6000.\\
 
 We chose seven different test cases and profiled several parameters for each test case. We compare and analyze these values across all three different GPU cards. We profiled the following parameters:
 
@@ -153,7 +155,7 @@ HotSpot is a widely used tool to estimate processor temperature based on an arch
 
 \newpage
 \section{Methodology}
-The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking with the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, cuda settings etc.\\
+The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking with the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, CUDA settings etc.\\
 
 
 Instead of profiling the total execution time, which collectively sums up the CPU \& GPU running time, we only profiled the time for all the API calls and the Kernel calls. Since we are only concerned with GPU benchmarking, this seems reasonable as all three machines have different processors (Table \ref{table2}), which would lead to different CPU running times. We also profiled the number of registers used per thread for each kernel call in each program. And lastly we profiled the GPU temperature and fan speed. Though we understand that for desktop machine people are not that concerned about them, however when setting up different servers temperature and fan speed play an important role.  
@@ -362,9 +364,9 @@ Though it was extremely challenging to get three machines with different NVIDIA 
 
 From our results we conclude that NVIDIA GTX 650 performed best both in terms of speed and \& performance. It showed the least time for API calls, was comparable to Quadro M6000 in terms of kernel calls and had the least temperature and fan speed. Hence both for personal desktop machines and serves, we would recommend buying NVIDIA GTX 650 over NVIDIA GTX 630 or NVIDIA Quadro M6000. \\
 
-COST?????
-What does the literature say which card is good and why.
+We did literature survey about specifications of these three GPUs which we used and extracted some evaluations done by most trusted users available in GAME DEBATE webpage \cite{game_debate}. Our results some how match with the previous benchmarkings and as we stated above, NVIDIA GTX 650 performe better than the other two. Although comparing performance of different graphics cards using different benchmarks would not be accurate and we are not sure what were the programs which others used to get these results. One GPU could perform better with executing some programs and weaker on some others. But overally, considering the average we can rely on reported data and evaluate our benchmarking project with them. According to the Table \ref{User evaluation} the overal score for NVIDIA GTX 650 is ranked as 8.6 out of 10 while GT 630 and Quadro 6000 have score 7.0 and 7.0 respectively. Using the literature, GTX 650 has much better life span rather than the other two and this can be proved by our results as well. Because according to our foundings GTX 650 performs better by less temperature and fan speed in comparison with those two which could be a great clue for having more life span. Also in online evaluations we found that users are more satisfied with GTX 650 regarding to its price and the value for GTX 650 is reported 8.7 out of 10 which means it worths buying whereas this value for GT 630 and Quadro 6000 are 6.9 and 5.4 respectively. \\
 
+To put everything in a nutshell, although it is not an accurate way to compare the results of few benchmarks on different graphics cards with the overall performance of those graphics cards, NVIDIA GTX 650 performs better than NVIDIA 630 and Quadro 6000. We have profiled and compared total time for all API calls as well as Kernel calls. We also monitored number of registers per thread for each Kernel call for different GPU for the same programs. Temperature and speed were also profiled in the aforementioned graphics cards.
 
 \newpage
 \section{Appendix}
@@ -402,6 +404,20 @@ These tests have been performed using a Quadro 6000 and hardware platform 3 spec
 \end{figure*}
 
 
+\newpage
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{nvprof}
+{\href{http://docs.nvidia.com/cuda/profiler-users-guide/#nvprof-overview}{nvprof, NVIDIA profiling tool} } \\
+\bibitem{rodinia}
+{\href{http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php/Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators} {Rodinia GPU Benchmark}}\\
+\bibitem{game_debate}
+{\href{http://www.game-debate.com/gpu/index.php?gid=1658&gid2=1150&compare=geforce-gt-630-gainward-2gb-edition-vs-geforce-gtx-650-2gb}{GAME DEBATE, NVIDIA GPU compare and evaluation community}} \\
+\bibitem{CUDA}
+{\href{http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4AXrC80gu}{NVIDIA CUDA documentation} }\\
+\bibitem{report}
+{\href {http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4AXrC80gu}{MIKE by DHI Saas, Parallelisation using GPU Benchmarking} } \\
 
+\end{thebibliography}
 
 \end{document}
