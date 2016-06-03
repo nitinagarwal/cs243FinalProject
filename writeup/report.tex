@@ -153,10 +153,10 @@ HotSpot is a widely used tool to estimate processor temperature based on an arch
 
 \newpage
 \section{Methodology}
-The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking of the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, cuda settings etc.\\
+The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking with the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, cuda settings etc.\\
 
 
-Instead of profiling the total execution time, which collectively sums up the CPU \& GPU running time, we only profiled the time for all the API calls and the Kernel calls. Since we are only concerned with GPU benchmarking, this seems reasonable as all three machines have different processors (Table \ref{table1}), which would lead to different CPU running times. We also profiled the number of registers used per thread for each kernel call in each program. And lastly we profiled the GPU temperature and fan speed. Though we understand that for desktop machine people are not that concerned about them, however when compiling different servers temperature and fan speed play an important role.  
+Instead of profiling the total execution time, which collectively sums up the CPU \& GPU running time, we only profiled the time for all the API calls and the Kernel calls. Since we are only concerned with GPU benchmarking, this seems reasonable as all three machines have different processors (Table \ref{table2}), which would lead to different CPU running times. We also profiled the number of registers used per thread for each kernel call in each program. And lastly we profiled the GPU temperature and fan speed. Though we understand that for desktop machine people are not that concerned about them, however when setting up different servers temperature and fan speed play an important role.  
 
 \subsection{GPU Parallelisation}
 The GPU computing approach uses graphic card to perform the calculation in parallel. This approach is based on CUDA which is made by NVIDIA and works on NVIDIA graphic cards that have Compute Capability 2.0 or higher. The point is worth mentioning that only hydrodynamic calculations are performed on the GPU and the additional calculations are run on the CPU. Then these calculations are parallelised using shared memory approach, OpenMP.
@@ -183,7 +183,7 @@ The following are the specifications of the three NVIDIA graphic cards which wer
 
 The specifications of the machines in which the graphic cards resided are shown in the below table:
 
-\begin{table}[!h]
+\begin{table}
 \caption{Hardware Platforms}
 \centering
 \begin{tabular}{| c| c| c| c|}
@@ -192,7 +192,7 @@ The specifications of the machines in which the graphic cards resided are shown 
 	\hline
     1  & Intel Xeon(R) E5405 (4 cores, 2.00GHz) & 2& ubuntu 14.04 \\
 	\hline
-    2  & Nitincomp?? & 16 & ubuntu 14.04 \\
+    2  & Intel Core i5-4460 (4 cores, 3.20GHz) & 16 & ubuntu 14.04 \\
 	\hline
     3  & Intel Core 2 Quad Q9400 (4 cores, 2.66GHz) & 7.8& ubuntu 14.04 \\
 	\hline
@@ -200,8 +200,6 @@ The specifications of the machines in which the graphic cards resided are shown 
 \label{table2}
 \end{table}
 
-\newpage
-\clearpage
 \subsection{Software}
 All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
 
@@ -291,90 +289,119 @@ Quadro 6000 is a high-end professional card based on the 40nm, Fermi architectur
 Despite exhibiting similarities to GeForce GTX 470, due to being under-clocked and because Quadro 6000's drivers are only certified for professional applications only, its gaming performance is up to 10 persent slower than GeForce GTX 470.
 
 \newpage
-\section{Benchmarking using a GeForce GT 630}
-These tests have been performed using a GeForce GT 630 and hardware platform 1 specified in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+\section{Experimental Results}
+
+The below figures summarize all the results from all three different NVIDIA GPUs. As described in the methodology section, we ran seven different test cases on 3 different GPU cards keeping all the setting same. We profiled for the total API time, total kernel time, number of registers-per-thread for each kernel, temperature \& fan speed.   
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=7cm]{../imgs/api_calls.png}
+\caption{Total time for API calls for seven test cases}
+\label{fig:totalAPI}
+\end{figure*}
+
+The above figure represents the total API time for each testcase on all three NVIDIA GPU's. On the Y-axis is the total time in milli-seconds, while on the X axis are the different test cases. 
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=7cm]{../imgs/kernel_calls.png}
+\caption{Total time for kernel calls for seven test cases}
+\label{fig:totalKERNEL}
+\end{figure*}
+
+The above figure represents the total kernel time for each testcase on all three NVIDIA GPU's. On the Y-axis is the total time in milli-seconds, while on the X axis are the different test cases. This was computed by adding the time from all kernel calls. 
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=7cm]{../imgs/register_thread.png}
+\caption{Number of registers per thread on each kernel for seven test cases}
+\label{fig:regperthread}
+\end{figure*}
+
+The above figure represents the number of registers used per thread for each kernel. e.g Breadth first search had two kernel calls and the number of registers used by GTX 650, GTX 630 \& Quadro M6000 for kernel 1 are 16, 15 \& 16 and for kernel 2 are 11, 12 \& 11 respectively. 
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=7cm]{../imgs/temp.png}
+\caption{Temperature (C) for seven test cases}
+\label{fig:temp}
+\end{figure*}
+
+The above figure represents the temperature of the machines (and in turn GPU's) while running individual testcases. The temperature is measure in celsius. Like mentioned before, we profiled these parameters considering that in future they maybe used for setting up huge computer clusters.
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=0.95\textwidth,height=7cm]{../imgs/fan.png}
+\caption{Fan spean for seven test cases}
+\label{fig:fan}
+\end{figure*}
+
+The above figure represents the fan speed in percentage for each test case. This depicts the percentage of total fan power. \\
+
+\emph{For more detailed results, we ask the readers to refer to the appendix where we present individual results of each test case on each NVIDIA GPU card.}
+ 
+
+
+\newpage
+\section{Discussion and Analysis}
+
+There were several key observations made during this project. One can deduce a lot of information regarding GPU processing from the above graphs. The first key observation is no matter what GPU card it is, most of the API time is consumed by allocating memory inside GPU (cudaMalloc) and copying data from CPU to GPU (cudaMemcpy). As can be seen in Figures \ref{fig:x630},\ref{fig:x650},\ref{fig:6000} nearly 80$\%$ of the time was taken by cudaMalloc \& cuda Memcpy. \\
+
+The second observation which can be deduced by running all the seven test cases is that in genera,l among total time for API calls, GTX 650 performed the best and GTX 630 performed the worst as shown in Figure \ref{fig:totalAPI}. Among the testcases, depending on the complexity of the arguments, the total time varied. For example, the total time for \textit{PathFinder} was considerably higher for all three GPU's as compared to any other test case.\\
+
+The third observation can be drawn from Figure \ref{fig:totalKERNEL}. The total time for all kernel calls was in general lower for GTX 650 and Quadro M6000 as compared to GTX 630. Among both these GPU's their performance varied, probably due to the implementation of the test the cases. \\
+
+Figure \ref{fig:regperthread} provides us with not only the number of register per thread but also the number of different kernel calls for each of the test cases. In general Quadro M6000 had higher threads-per-kernel than the other two GPU's. And probably this might be one of the reasons for their improved performance like shown in Figure \ref{fig:totalKERNEL}. \\
+
+Now as mentioned in the introduction, we also profiled the temperature of the GPU and the fan speed. It was extremely difficult to do so as needed to be certain that these numbers are a true indicator of the GPU performance. Hence, while conducting experiments, we made sure that all the programs/processes were killed and \emph{only} the particular test case was running. Secondly one can argue that while benchmarking dekstop GPU's, why profile fan speed and temperature. However, we are thinking in the lines of assembling huge cluster of machines with high-end graphics card such as these. In those circumstances, one would not only care for the best performing GPU card, but also for a one which does not dissipate a lot of heat or produce excess noise etc. From Figures \ref{fig:temp} it seems like Quadro M6000 dissipates a lot of heat while GTX 630 a \& GTX 650 dissipated equal amounts of heat. One would assume from Figure \ref{fig:temp} that the fan speed for Quadro M6000 would be the highest as it had the highest temperature. However we observed that GTX 630 had the highest fan percentage, while GTX 650 the lowest percentage.
+
+\newpage
+\section{Conclusion}
+
+Though it was extremely challenging to get three machines with different NVIDIA GPU card's, setting all the experiments, keeping similar settings etc, we managed to successfully benchmark GTX 630, GTX 650, Quadro M6000. Further one may say that since execution time for most of the test cases was in seconds, this benchmark study is not sufficient. However we argue that even with test cases with execution times in seconds, we were successfully able to show differences both in speed \& performance. This difference would only magnify on much complex programs and bigger datasets. \\
+
+From our results we conclude that NVIDIA GTX 650 performed best both in terms of speed and \& performance. It showed the least time for API calls, was comparable to Quadro M6000 in terms of kernel calls and had the least temperature and fan speed. Hence both for personal desktop machines and serves, we would recommend buying NVIDIA GTX 650 over NVIDIA GTX 630 or NVIDIA Quadro M6000. \\
+
+COST?????
+What does the literature say which card is good and why.
+
+
+\newpage
+\section{Appendix}
+
+\subsection{Benchmarking using a GeForce GT 630}
+These tests have been performed using a NVIDIA GeForce GT 630 and hardware platform 1 specified in Table \ref{table2}. The below figures depict the time taken for each individual API call for all the seven test cases.
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/x630.pdf}
 \caption{Time take for each API for seven test cases}
-\label{Time take for each API for seven test cases}
+\label{fig:x630}
 \end{figure*}
 
-
-
-
 \newpage
-\section{Benchmarking using a GeForce GTX 650}
-These tests have been performed using a GeForce GTX 650 and hardware platform 2 specified in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+\subsection{Benchmarking using a GeForce GTX 650}
+These tests have been performed using a GeForce GTX 650 and hardware platform 2 specified in Table \ref{table2}. The below figures depict the time taken for each individual API call for all the seven test cases.
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/x650.pdf}
 \caption{Time take for each API for seven test cases}
-\label{Time take for each API for seven test cases}
+\label{fig:x650}
 \end{figure*}
 
-
 \newpage
-\section{Benchmarking using a Quadro 6000}
-These tests have been performed using a Quadro 6000 and hardware platform 3 specified in the table in Table \ref{table2}. The below figures depict the time take for each individual API call for all seven test cases.
+\subsection{Benchmarking using a Quadro 6000}
+These tests have been performed using a Quadro 6000 and hardware platform 3 specified in Table \ref{table2}. The below figures depict the time taken for each individual API call for all the seven test cases.
 
 \begin{figure*}[!h]
 \centering
 \includegraphics[scale=0.6]{../imgs/m6000.pdf}
 \caption{Time take for each API for seven test cases}
-\label{Time take for each API for seven test cases}
-\end{figure*}
-
-\newpage
-\section{Results}
-
-The below figures summarize all the results from all three different NVIDIA GPUs. 
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[width=0.95\textwidth,height=8cm]{../imgs/api_calls.png}
-\caption{Total time for API calls for seven test cases}
-\label{Total time for API calls for seven test cases}
-\end{figure*}
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[width=0.95\textwidth,height=8cm]{../imgs/kernel_calls.png}
-\caption{Total time for kernel calls for seven test cases}
-\label{Total time for kernel calls for seven test cases }
-\end{figure*}
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/register_thread.png}
-\caption{Number of registers per thread on each kernel for seven test cases}
-\label{Number of registers per thread on each kernel for seven test cases}
-\end{figure*}
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/temp.png}
-\caption{Temperature (C) for seven test cases}
-\label{Temperature (C) for seven test cases}
-\end{figure*}
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[width=0.95\textwidth,height=6cm]{../imgs/fan.png}
-\caption{Fan spean for seven test cases}
-\label{Fan spean for seven test cases}
+\label{fig:6000}
 \end{figure*}
 
 
-\newpage
-\section{Analysis}
-.......
 
-\newpage
-\section{Conclusion}
-
-Though the test cases ran for several seconds ..if they ran for minutes the differences will be even more profound
 
 \end{document}
