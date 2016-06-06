@@ -98,7 +98,7 @@
 \section{Vision and Scope}
 In this project, a set of well-defined test cases for GPU have been used to compare the performances of different graphics cards across differnt platforms. The main focus of the project has been to use the various test cases with similar settings on multiple graphics cards, keeping everything else the same. We perform benchmarking on three different NVIDIA Graphic Cards and profile the test cases using an NVIDIA profiler \textbf{nvprof} \cite{nvprof}. We show the results of each of the test cases and further perform analysis.\\
 
-The project involved searching of well-known, published test cases, which could be tested on Linux platforms. All benchmarks have been performed using the release 3.1 version of the Rodinia \cite{rodinia}. Several test cases from Rodinia were profiled using nvprof (NVIDIA profiling tool), which is a command-line profiler available for Linux, Windows, and OS X. It helps users to understand and optimize the performance of CUDA applications and easily compare and analyze the result of benchmarks on different GPUs\cite{CUDA}. A CUDA version of 7.5 was used to benchmark all three graphic cards in this project. The three NVIDIA graphics cards benchmarked are GTX 630, GTX 650 \& Quadro M6000.\\
+The project involved searching of well-known, published test cases, which could be tested on Linux platforms. All benchmarks have been performed using the release 3.1 version of the Rodinia \cite{rodinia}. Several test cases from Rodinia were profiled using nvprof (NVIDIA profiling tool), which is a command-line profiler available for Linux, Windows, and OS X. It helps users to understand and optimize the performance of CUDA applications and easily compare and analyze the result of benchmarks on different GPUs \cite{CUDA}. A CUDA version of 7.5 was used to benchmark all three graphic cards in this project. The three NVIDIA graphics cards benchmarked are GTX 630, GTX 650 \& Quadro M6000.\\
 
 We chose seven different test cases and profiled several parameters for each test case. We compare and analyze these values across all three different GPU cards. We profiled the following parameters:
 
@@ -113,7 +113,7 @@ We chose seven different test cases and profiled several parameters for each tes
 \textit{Number of registers per thread for each Kernel call: } The number of registers in use affects the occupancy of your GPU since the total number of registers per multiprocessor is limited. In fact it's dependant on the problem but we will want to have our occupancy as high as possible, to avoid ressources from being wasted. On the other hand it is possible that the code is slowed down if the number of registers is restricted.
 
 \item
-\textit{Temperature: } We understand that temperature and fan-speed would be more relevant in for benchmarking mobile GPU's, but for completeness we profiled them both.
+\textit{Temperature: } We understand that temperature and fan-speed would be more relevant for benchmarking mobile GPU's, but for completeness we profiled them both.
 
 \item
 \textit{Fan Speed: All the graphics cards requires a robust fan to keep it from overheating under a load. This parameter is the percentage of the total amount of fan power depending on how much you tax the graphics card in the system. You may want to adjust its fan speed to provide better cooling or produce less noise when not pushing it to its limits.}
@@ -155,16 +155,16 @@ HotSpot is a widely used tool to estimate processor temperature based on an arch
 
 \newpage
 \section{Methodology}
-The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking with the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g for GPU architecture, CUDA settings etc.\\
+The main objective of this project is to use same test cases, with similar settings on three different NVIDIA GPU graphics cards. During benchmarking with the seven test cases, we made sure that no other programs, code etc were running on these three machines. We further ensured that all the settings were as similar as possible e.g GPU architecture settings, CUDA settings etc.\\
 
 
 Instead of profiling the total execution time, which collectively sums up the CPU \& GPU running time, we only profiled the time for all the API calls and the Kernel calls. Since we are only concerned with GPU benchmarking, this seems reasonable as all three machines have different processors (Table \ref{table2}), which would lead to different CPU running times. We also profiled the number of registers used per thread for each kernel call in each program. And lastly we profiled the GPU temperature and fan speed. Though we understand that for desktop machine people are not that concerned about them, however when setting up different servers temperature and fan speed play an important role.  
 
-\subsection{GPU Parallelisation}
+\subsection{GPU Parallelization}
 The GPU computing approach uses graphic card to perform the calculation in parallel. This approach is based on CUDA which is made by NVIDIA and works on NVIDIA graphic cards that have Compute Capability 2.0 or higher. The point is worth mentioning that only hydrodynamic calculations are performed on the GPU and the additional calculations are run on the CPU. Then these calculations are parallelised using shared memory approach, OpenMP.
 
 \subsection{Hardware}
-The following are the specifications of the three NVIDIA graphic cards which were used to perform benchmark:
+The following are the specifications of the three NVIDIA graphic cards which were benchmarked using the seven test cases.
 
 \begin{table}[!h]
 \caption{GPU specifications}
@@ -185,7 +185,7 @@ The following are the specifications of the three NVIDIA graphic cards which wer
 
 The specifications of the machines in which the graphic cards resided are shown in the below table:
 
-\begin{table}
+\begin{table}[!h]
 \caption{Hardware Platforms}
 \centering
 \begin{tabular}{| c| c| c| c|}
@@ -205,13 +205,15 @@ The specifications of the machines in which the graphic cards resided are shown 
 \subsection{Software}
 All benchmarks have been performed using the release 3.1 version of the Rodinia: accelerating Compute-Intensive Applications with Accelerators. It released to address some concerns in  which platforms face. For example, there are many suites for parallel computing on general-purpose CPU architectures, but accelerators fall into a gap that is not covered by previous benchmark development.
 
+
+
 \newpage
 \clearpage
 \section{Comparison of the Graphic Cards}
-Here we have the comparison in performance among GTX 650, GT 630 and Quadro 600 based on reported evaluations. Later we will compare this evaluation with our results to show how they match with the expected values. 
+Here we compare the performance of GTX 650, GT 630 and Quadro 600 based on already published evaluations \cite{game_debate}. Later we will compare this evaluation with our results to show how they match with the expected values. 
 
 \subsection{Overal evaluation}
-We have used overal evaluations for the aforementioned graphics cards reported by Game Debate. Following is a brief explanation of each parameter in Table \ref{GPU comparison}. Performance score reflects how well you feel the hardware meets your expectations on performance. Lifespan score reflects how long you feel this hardware will last and perform its function. Value score represents how well the graphics card is placed with regards to its price to performance. 
+We have used overall evaluations for the aforementioned graphics cards reported by Game Debate. Following is a brief explanation of each parameter in Table \ref{GPU comparison}. Performance score reflects how well you feel the hardware meets your expectations on performance. Lifespan score reflects how long you feel this hardware will last and perform its function. Value score represents how well the graphics card is placed with regards to its price to performance. 
 
 \begin{table}[!h]
 \caption{Evaluation published by Game Debate}
@@ -236,23 +238,33 @@ We have used overal evaluations for the aforementioned graphics cards reported b
 \end{table}
 
 A more detailed explanation:\\
-The GTX 650 has a 484 MHz higher core clock speed but 24 fewer Texture Mapping Units than the Quadro 6000. The lower TMU count doesn't matter, though, as altogether the GTX 650 manages to provide 1.8 GTexel/s better texturing performance. This still holds weight but shader performance is generally more relevant, particularly since both of these GPUs support at least DirectX 10.The GTX 650 has a 248 MHz higher core clock speed and 16 more Texture Mapping Units than the GeForce GT 630. This results GT 630 performs worse than the other two.
 
-The GTX 650 has a 484 MHz higher core clock speed than the Quadro 6000, but the Quadro 6000 has 32 more Render Output Units than the GTX 650. As a result, the Quadro 6000 exhibits a 10.7 GPixel/s better Pixel Fill Rate than the GTX 650. However, both GPUs support DirectX 9 or above, and pixeling performance is only really relevant when comparing older cards. These two graphics cards have higher core clock speed and more Render Output Units than the GeForce GT 630. This results GT 630 again to perform the worst.
+The GTX 650 has a 484 MHz higher core clock speed but 24 fewer Texture Mapping Units than the Quadro 6000. The lower TMU count doesn't matter, though, as altogether the GTX 650 manages to provide 1.8 GTexel/s better texturing performance. This still holds weight but shader performance is generally more relevant, particularly since both of these GPUs support at least DirectX 10.The GTX 650 has a 248 MHz higher core clock speed and 16 more Texture Mapping Units than the GeForce GT 630. This results GT 630 performs worse than the other two.\\
 
-The GTX 650 was released over a year more recently than the Quadro 6000, and so the GTX 650 is likely to have better driver support, meaning it will be more optimized for running the latest games when compared to the Quadro 6000.The GTX 650 was released less than a year after the GeForce GT 630, and so they are likely to have similar driver support for optimizing performance when running the latest games. 
 
-The Quadro 6000 has 4096 MB more video memory than the GTX 650, so is likely to be much better at displaying game textures at higher resolutions. This is supported by the fact that the Quadro 6000 also has superior memory performance overall. The GeForce GTX 650 1GB and the GeForce GT 630 have the same amount of video memory, but are likely to provide slightly different experiences when displaying game textures at high resolutions.
+The GTX 650 has a 484 MHz higher core clock speed than the Quadro 6000, but the Quadro 6000 has 32 more Render Output Units than the GTX 650. As a result, the Quadro 6000 exhibits a 10.7 GPixel/s better Pixel Fill Rate than the GTX 650. However, both GPUs support DirectX 9 or above, and pixeling performance is only really relevant when comparing older cards. These two graphics cards have higher core clock speed and more Render Output Units than the GeForce GT 630. This results GT 630 again to perform the worst.\\
 
-The Quadro 6000 has 63.4 GB/sec greater memory bandwidth than the GTX 650, which means that the memory performance of the Quadro 6000 is much better than the GTX 650. These two have greater memory bandwidth than the GeForce GT 630, which means that the memory performance of the GTX 630 is much worse than the other two. 
 
-The GeForce GTX 650 2GB has 384 Shader Processing Units, the Quadro 6000 has 448 and the GeForce GT 630 has 96. However, the actual shader performance of the GTX 650 is 406, the actual shader performance of the Quadro 6000 is 514 and the actual shader performance of the GeForce GT 630 is 156. The Quadro 6000 having 108 better shader performance and an altogether better performance when taking into account other relevant data means that the Quadro 6000 delivers a significantly smoother and more efficient experience when processing graphical data than the GTX 650 and GT 630. 
+The GTX 650 was released over a year more recently than the Quadro 6000, and so the GTX 650 is likely to have better driver support, meaning it will be more optimized for running the latest games when compared to the Quadro 6000.The GTX 650 was released less than a year after the GeForce GT 630, and so they are likely to have similar driver support for optimizing performance when running the latest games. \\
 
-The GTX 650 transistor size technology is 12 nm (nanometers) smaller than the Quadro 6000 as well as GT 630. This means that the GTX 650 is expected to run slightly cooler and achieve higher clock frequencies than both the Quadro 6000 and GT 630.
 
-The GeForce GTX 650 2GB requires 64 Watts to run, the GeForce GT 630 requires 65 Watts and the Quadro 6000 requires 204 Watts. We would recommend a PSU with at least 400 Watts for the GTX 650 and a PSU with at least 600 Watts for the Quadro 6000. The Quadro 6000 requires 140 Watts more than the GTX 650 to run. The difference is significant enough that the Quadro 6000 may have an adverse affect on your yearly electricity bills in comparison to the GTX 650. The GeForce GT 630 requires 1 Watts more than the GTX 650 to run. The difference is not significant enough for the GeForce GT 630 to have a noticeably larger impact on your yearly electricity bills than the GTX 650.
+The Quadro 6000 has 4096 MB more video memory than the GTX 650, so is likely to be much better at displaying game textures at higher resolutions. This is supported by the fact that the Quadro 6000 also has superior memory performance overall. The GeForce GTX 650 1GB and the GeForce GT 630 have the same amount of video memory, but are likely to provide slightly different experiences when displaying game textures at high resolutions.\\
 
-In terms of overall gaming performance, the graphical capabilities of the Nvidia Quadro 6000 are noticeably better than the Nvidia GeForce GTX 650 2GB and massively better than the GT 630.
+
+The Quadro 6000 has 63.4 GB/sec greater memory bandwidth than the GTX 650, which means that the memory performance of the Quadro 6000 is much better than the GTX 650. These two have greater memory bandwidth than the GeForce GT 630, which means that the memory performance of the GTX 630 is much worse than the other two. \\
+
+
+The GeForce GTX 650 2GB has 384 Shader Processing Units, the Quadro 6000 has 448 and the GeForce GT 630 has 96. However, the actual shader performance of the GTX 650 is 406, the actual shader performance of the Quadro 6000 is 514 and the actual shader performance of the GeForce GT 630 is 156. The Quadro 6000 having 108 better shader performance and an altogether better performance when taking into account other relevant data means that the Quadro 6000 delivers a significantly smoother and more efficient experience when processing graphical data than the GTX 650 and GT 630. \\
+
+
+The GTX 650 transistor size technology is 12 nm (nanometers) smaller than the Quadro 6000 as well as GT 630. This means that the GTX 650 is expected to run slightly cooler and achieve higher clock frequencies than both the Quadro 6000 and GT 630.\\
+
+
+The GeForce GTX 650 2GB requires 64 Watts to run, the GeForce GT 630 requires 65 Watts and the Quadro 6000 requires 204 Watts. We would recommend a PSU with at least 400 Watts for the GTX 650 and a PSU with at least 600 Watts for the Quadro 6000. The Quadro 6000 requires 140 Watts more than the GTX 650 to run. The difference is significant enough that the Quadro 6000 may have an adverse affect on your yearly electricity bills in comparison to the GTX 650. The GeForce GT 630 requires 1 Watts more than the GTX 650 to run. The difference is not significant enough for the GeForce GT 630 to have a noticeably larger impact on your yearly electricity bills than the GTX 650. \\
+
+
+In terms of overall gaming performance, the graphical capabilities of the Nvidia Quadro 6000 are noticeably better than the Nvidia GeForce GTX 650 2GB and massively better than the GT 630. \\
+
 
 Here we also have user evaluation on the same graphics cards published by Game Debate.
 
@@ -276,7 +288,7 @@ Here we also have user evaluation on the same graphics cards published by Game D
 \label{User evaluation}
 \end{table}
 
-Now, let's have a brief description of the three graphics cards we used.
+Here is a brief description of the three graphics cards we used.
 
 \subsection {Review on GT 630}
 GeForce GT 630 is Middle-Class Graphics Card based on the first revision of the Fermi Architecture. The Fermi Architecture is manufactured with a 40nm technology and uses a technique known as Hot Clocking: The Shaders are clocked twice as fast as the Central Unit. While this leads to a reasonable performance boost, it causes enormous amounts of energy dissipation, leading, ultimately, to a significantly higher operating temperature.
@@ -347,9 +359,9 @@ The above figure represents the fan speed in percentage for each test case. This
 \newpage
 \section{Discussion and Analysis}
 
-There were several key observations made during this project. One can deduce a lot of information regarding GPU processing from the above graphs. The first key observation is no matter what GPU card it is, most of the API time is consumed by allocating memory inside GPU (cudaMalloc) and copying data from CPU to GPU (cudaMemcpy). As can be seen in Figures \ref{fig:x630},\ref{fig:x650},\ref{fig:6000} nearly 80$\%$ of the time was taken by cudaMalloc \& cuda Memcpy. \\
+There were several key observations made during this project. One can deduce a lot of information regarding GPU processing from the above graphs. The first key observation is no matter what GPU card it is, most of the API time is consumed by allocating memory inside GPU (cudaMalloc) and copying data from CPU to GPU (cudaMemcpy). As can be seen in Figures \ref{fig:x630},\ref{fig:x650},\ref{fig:6000} (in the appendix section) nearly 80$\%$ of the time was taken by cudaMalloc \& cuda Memcpy. \\
 
-The second observation which can be deduced by running all the seven test cases is that in genera,l among total time for API calls, GTX 650 performed the best and GTX 630 performed the worst as shown in Figure \ref{fig:totalAPI}. Among the testcases, depending on the complexity of the arguments, the total time varied. For example, the total time for \textit{PathFinder} was considerably higher for all three GPU's as compared to any other test case.\\
+The second observation which can be deduced by running all the seven test cases is that in general, among total time for API calls, GTX 650 performed the best and GTX 630 performed the worst as shown in Figure \ref{fig:totalAPI}. Among the testcases, depending on the complexity of the arguments, the total time varied. For example, the total time for \textit{PathFinder} was considerably higher for all three GPU's as compared to any other test case.\\
 
 The third observation can be drawn from Figure \ref{fig:totalKERNEL}. The total time for all kernel calls was in general lower for GTX 650 and Quadro M6000 as compared to GTX 630. Among both these GPU's their performance varied, probably due to the implementation of the test the cases. \\
 
@@ -360,24 +372,26 @@ Now as mentioned in the introduction, we also profiled the temperature of the GP
 \newpage
 \section{Conclusion}
 
-Though it was extremely challenging to get three machines with different NVIDIA GPU card's, setting all the experiments, keeping similar settings etc, we managed to successfully benchmark GTX 630, GTX 650, Quadro M6000. Further one may say that since execution time for most of the test cases was in seconds, this benchmark study is not sufficient. However we argue that even with test cases with execution times in seconds, we were successfully able to show differences both in speed \& performance. This difference would only magnify on much complex programs and bigger datasets. \\
+Though it was extremely challenging to get three machines with different NVIDIA GPU card's, setting up of all the experiments and maintaining  similar settings throughout the experiments, we managed to successfully benchmark GTX 630, GTX 650, Quadro M6000. Further one may say that since execution time for most of the test cases was in seconds, this benchmark study is not sufficient. However we argue that even with test cases with execution times in seconds, we were successfully able to show differences both in speed \& performance. This difference would only magnify on much complex programs and bigger datasets. \\
 
 From our results we conclude that NVIDIA GTX 650 performed best both in terms of speed and \& performance. It showed the least time for API calls, was comparable to Quadro M6000 in terms of kernel calls and had the least temperature and fan speed. Hence both for personal desktop machines and serves, we would recommend buying NVIDIA GTX 650 over NVIDIA GTX 630 or NVIDIA Quadro M6000. \\
 
-We did literature survey about specifications of these three GPUs which we used and extracted some evaluations done by most trusted users available in GAME DEBATE webpage \cite{game_debate}. Our results some how match with the previous benchmarkings and as we stated above, NVIDIA GTX 650 performe better than the other two. Although comparing performance of different graphics cards using different benchmarks would not be accurate and we are not sure what were the programs which others used to get these results. One GPU could perform better with executing some programs and weaker on some others. But overally, considering the average we can rely on reported data and evaluate our benchmarking project with them. According to the Table \ref{User evaluation} the overal score for NVIDIA GTX 650 is ranked as 8.6 out of 10 while GT 630 and Quadro 6000 have score 7.0 and 7.0 respectively. Using the literature, GTX 650 has much better life span rather than the other two and this can be proved by our results as well. Because according to our foundings GTX 650 performs better by less temperature and fan speed in comparison with those two which could be a great clue for having more life span. Also in online evaluations we found that users are more satisfied with GTX 650 regarding to its price and the value for GTX 650 is reported 8.7 out of 10 which means it worths buying whereas this value for GT 630 and Quadro 6000 are 6.9 and 5.4 respectively. \\
+We did literature survey about specifications of these three GPUs which we used and extracted some evaluations done by most trusted users available in GAME DEBATE webpage \cite{game_debate}. Our results some how match with the previous benchmarkings and as we stated above, NVIDIA GTX 650 performs better than the other two. Although comparing performance of different graphics cards using different benchmarks would not be accurate and we are not sure what were the programs which others used to get these results. One GPU could perform better with executing some programs and weaker on some others. But in general, considering the average we can rely on the reported data and evaluate our benchmarking project with them. According to the Table \ref{User evaluation} the overall score for NVIDIA GTX 650 is ranked as 8.6 out of 10 while GT 630 and Quadro 6000 have score 7.0 and 7.0 respectively. Using the literature, GTX 650 has much better life span rather than the other two and this can be proved by our results as well. Because according to our foundings GTX 650 performs better by less temperature and fan speed in comparison with those two which could be a great clue for having more life span. Also in online evaluations we found that users are more satisfied with GTX 650 regarding to its price and the value for GTX 650 is reported 8.7 out of 10 which means it worths buying whereas this value for GT 630 and Quadro 6000 are 6.9 and 5.4 respectively. \\
 
-To put everything in a nutshell, although it is not an accurate way to compare the results of few benchmarks on different graphics cards with the overall performance of those graphics cards, NVIDIA GTX 650 performs better than NVIDIA 630 and Quadro 6000. We have profiled and compared total time for all API calls as well as Kernel calls. We also monitored number of registers per thread for each Kernel call for different GPU for the same programs. Temperature and speed were also profiled in the aforementioned graphics cards.
+In a nutshell, although it is not an accurate way to compare the results of few benchmarks on different graphics cards with the overall performance of those graphics cards, NVIDIA GTX 650 performs better than NVIDIA 630 and Quadro 6000. We have profiled and compared total time for all API calls as well as Kernel calls. We also monitored number of registers per thread for each Kernel call for different GPU for the same programs. Temperature and speed were also profiled in the aforementioned graphics cards.
 
 \newpage
 \section{Appendix}
 
+Here we present the individual results of each test case on each NVIDIA GPU card. We show graphs depicting the time taken for individual API calls for each test case on all three graphic cards. In order to make them concise we have integrated all the graphs from one GPU. Kindly zoom in. 
+
 \subsection{Benchmarking using a GeForce GT 630}
-These tests have been performed using a NVIDIA GeForce GT 630 and hardware platform 1 specified in Table \ref{table2}. The below figures depict the time taken for each individual API call for all the seven test cases.
+These tests have been performed using a NVIDIA GeForce GT 630 and hardware platform 1 specified in Table \ref{table2}. The below figures depict the time taken for each individual API call for all the seven test cases.  
 
 \begin{figure*}[!h]
 \centering
-\includegraphics[scale=0.6]{../imgs/x630.pdf}
-\caption{Time take for each API for seven test cases}
+\includegraphics[width=1\textwidth,height=14cm]{../imgs/x630.pdf}
+\caption{Time take for each API for seven test cases (please zoom in)}
 \label{fig:x630}
 \end{figure*}
 
@@ -387,8 +401,8 @@ These tests have been performed using a GeForce GTX 650 and hardware platform 2 
 
 \begin{figure*}[!h]
 \centering
-\includegraphics[scale=0.6]{../imgs/x650.pdf}
-\caption{Time take for each API for seven test cases}
+\includegraphics[width=1\textwidth,height=15cm]{../imgs/x650.pdf}
+\caption{Time take for each API for seven test cases (please zoom in)}
 \label{fig:x650}
 \end{figure*}
 
@@ -398,23 +412,28 @@ These tests have been performed using a Quadro 6000 and hardware platform 3 spec
 
 \begin{figure*}[!h]
 \centering
-\includegraphics[scale=0.6]{../imgs/m6000.pdf}
-\caption{Time take for each API for seven test cases}
+\includegraphics[width=1\textwidth,height=15cm]{../imgs/m6000.pdf}
+\caption{Time take for each API for seven test cases (please zoom in)}
 \label{fig:6000}
 \end{figure*}
 
 
 \newpage
 \clearpage
-\begin{thebibliography}{9}
+\begin{thebibliography}{5}
+
 \bibitem{nvprof}
 {\href{http://docs.nvidia.com/cuda/profiler-users-guide/#nvprof-overview}{nvprof, NVIDIA profiling tool} } \\
+
 \bibitem{rodinia}
 {\href{http://www.cs.virginia.edu/~skadron/wiki/rodinia/index.php/Rodinia:Accelerating_Compute-Intensive_Applications_with_Accelerators} {Rodinia GPU Benchmark}}\\
+
 \bibitem{game_debate}
 {\href{http://www.game-debate.com/gpu/index.php?gid=1658&gid2=1150&compare=geforce-gt-630-gainward-2gb-edition-vs-geforce-gtx-650-2gb}{GAME DEBATE, NVIDIA GPU compare and evaluation community}} \\
+
 \bibitem{CUDA}
 {\href{http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4AXrC80gu}{NVIDIA CUDA documentation} }\\
+
 \bibitem{report}
 {\href {http://docs.nvidia.com/cuda/cuda-getting-started-guide-for-linux/#axzz4AXrC80gu}{MIKE by DHI Saas, Parallelisation using GPU Benchmarking} } \\
 
